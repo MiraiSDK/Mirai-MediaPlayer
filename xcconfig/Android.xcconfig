@@ -1,0 +1,17 @@
+//
+//  Android.xcconfig
+//  UIKit
+//
+//  Created by Chen Yonghui on 12/6/13.
+//  Copyright (c) 2013 Shanghai Tinynetwork Inc. All rights reserved.
+//
+
+DEPLOYMENT_LOCATION = YES
+DSTROOT = /
+INSTALL_PATH = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk/System/Library/Frameworks/
+OTHER_LDFLAGS= -shared $(inherited) -lgnustl_shared -lobjc
+OTHER_CFLAGS= $(inherited) -DANDROID=1 -fblocks
+
+LD_DEPENDENCY_INFO_FILE=
+MACOSX_DEPLOYMENT_TARGET =
+

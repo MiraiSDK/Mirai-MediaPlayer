@@ -1,0 +1,661 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		430138941921E68300EC5B20 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430138931921E68300EC5B20 /* Cocoa.framework */; };
+		4301389E1921E68300EC5B20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4301389C1921E68300EC5B20 /* InfoPlist.strings */; };
+		430138C51921E6DE00EC5B20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4301389C1921E68300EC5B20 /* InfoPlist.strings */; };
+		430138CD1921E74900EC5B20 /* MediaPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138A01921E68300EC5B20 /* MediaPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430138CF1921E88500EC5B20 /* MediaPlayerDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138CE1921E88000EC5B20 /* MediaPlayerDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430138D21921E8C700EC5B20 /* MPContentItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138D01921E8C700EC5B20 /* MPContentItem.h */; };
+		430138D31921E8C700EC5B20 /* MPContentItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138D01921E8C700EC5B20 /* MPContentItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430138D41921E8C700EC5B20 /* MPContentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138D11921E8C700EC5B20 /* MPContentItem.m */; };
+		430138D51921E8C700EC5B20 /* MPContentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138D11921E8C700EC5B20 /* MPContentItem.m */; };
+		430138D81921E8E200EC5B20 /* MPMediaEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138D61921E8E200EC5B20 /* MPMediaEntity.h */; };
+		430138D91921E8E200EC5B20 /* MPMediaEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138D61921E8E200EC5B20 /* MPMediaEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430138DA1921E8E200EC5B20 /* MPMediaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138D71921E8E200EC5B20 /* MPMediaEntity.m */; };
+		430138DB1921E8E200EC5B20 /* MPMediaEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138D71921E8E200EC5B20 /* MPMediaEntity.m */; };
+		430138DE1921E8F800EC5B20 /* MPMediaItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138DC1921E8F800EC5B20 /* MPMediaItem.h */; };
+		430138DF1921E8F800EC5B20 /* MPMediaItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138DC1921E8F800EC5B20 /* MPMediaItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430138E01921E8F800EC5B20 /* MPMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138DD1921E8F800EC5B20 /* MPMediaItem.m */; };
+		430138E11921E8F800EC5B20 /* MPMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138DD1921E8F800EC5B20 /* MPMediaItem.m */; };
+		430138E41921E90B00EC5B20 /* MPMediaItemCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138E21921E90A00EC5B20 /* MPMediaItemCollection.h */; };
+		430138E51921E90B00EC5B20 /* MPMediaItemCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138E21921E90A00EC5B20 /* MPMediaItemCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430138E61921E90B00EC5B20 /* MPMediaItemCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138E31921E90A00EC5B20 /* MPMediaItemCollection.m */; };
+		430138E71921E90B00EC5B20 /* MPMediaItemCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138E31921E90A00EC5B20 /* MPMediaItemCollection.m */; };
+		430138EA1921E91D00EC5B20 /* MPMediaLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138E81921E91D00EC5B20 /* MPMediaLibrary.h */; };
+		430138EB1921E91D00EC5B20 /* MPMediaLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138E81921E91D00EC5B20 /* MPMediaLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430138EC1921E91D00EC5B20 /* MPMediaLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138E91921E91D00EC5B20 /* MPMediaLibrary.m */; };
+		430138ED1921E91D00EC5B20 /* MPMediaLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138E91921E91D00EC5B20 /* MPMediaLibrary.m */; };
+		430138F01921E94100EC5B20 /* MPMediaPickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138EE1921E94100EC5B20 /* MPMediaPickerController.h */; };
+		430138F11921E94100EC5B20 /* MPMediaPickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138EE1921E94100EC5B20 /* MPMediaPickerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430138F21921E94100EC5B20 /* MPMediaPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138EF1921E94100EC5B20 /* MPMediaPickerController.m */; };
+		430138F31921E94100EC5B20 /* MPMediaPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138EF1921E94100EC5B20 /* MPMediaPickerController.m */; };
+		430138F71921E9AF00EC5B20 /* MPMediaPlaylist.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138F51921E9AF00EC5B20 /* MPMediaPlaylist.h */; };
+		430138F81921E9AF00EC5B20 /* MPMediaPlaylist.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138F51921E9AF00EC5B20 /* MPMediaPlaylist.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430138F91921E9AF00EC5B20 /* MPMediaPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138F61921E9AF00EC5B20 /* MPMediaPlaylist.m */; };
+		430138FA1921E9AF00EC5B20 /* MPMediaPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138F61921E9AF00EC5B20 /* MPMediaPlaylist.m */; };
+		430138FD1921E9C300EC5B20 /* MPMediaQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138FB1921E9C300EC5B20 /* MPMediaQuery.h */; };
+		430138FE1921E9C300EC5B20 /* MPMediaQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138FB1921E9C300EC5B20 /* MPMediaQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430138FF1921E9C300EC5B20 /* MPMediaQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138FC1921E9C300EC5B20 /* MPMediaQuery.m */; };
+		430139001921E9C300EC5B20 /* MPMediaQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138FC1921E9C300EC5B20 /* MPMediaQuery.m */; };
+		430139031921E9D400EC5B20 /* MPMediaQuerySection.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139011921E9D400EC5B20 /* MPMediaQuerySection.h */; };
+		430139041921E9D400EC5B20 /* MPMediaQuerySection.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139011921E9D400EC5B20 /* MPMediaQuerySection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430139051921E9D400EC5B20 /* MPMediaQuerySection.m in Sources */ = {isa = PBXBuildFile; fileRef = 430139021921E9D400EC5B20 /* MPMediaQuerySection.m */; };
+		430139061921E9D400EC5B20 /* MPMediaQuerySection.m in Sources */ = {isa = PBXBuildFile; fileRef = 430139021921E9D400EC5B20 /* MPMediaQuerySection.m */; };
+		430139091921E9E500EC5B20 /* MPMoviePlayerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139071921E9E500EC5B20 /* MPMoviePlayerController.h */; };
+		4301390A1921E9E500EC5B20 /* MPMoviePlayerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139071921E9E500EC5B20 /* MPMoviePlayerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4301390B1921E9E500EC5B20 /* MPMoviePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430139081921E9E500EC5B20 /* MPMoviePlayerController.m */; };
+		4301390C1921E9E500EC5B20 /* MPMoviePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430139081921E9E500EC5B20 /* MPMoviePlayerController.m */; };
+		4301390F1921E9F500EC5B20 /* MPMoviePlayerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4301390D1921E9F500EC5B20 /* MPMoviePlayerViewController.h */; };
+		430139101921E9F500EC5B20 /* MPMoviePlayerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4301390D1921E9F500EC5B20 /* MPMoviePlayerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430139111921E9F500EC5B20 /* MPMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4301390E1921E9F500EC5B20 /* MPMoviePlayerViewController.m */; };
+		430139121921E9F500EC5B20 /* MPMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4301390E1921E9F500EC5B20 /* MPMoviePlayerViewController.m */; };
+		430139151921EA0900EC5B20 /* MPMusicPlayerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139131921EA0900EC5B20 /* MPMusicPlayerController.h */; };
+		430139161921EA0900EC5B20 /* MPMusicPlayerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139131921EA0900EC5B20 /* MPMusicPlayerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430139171921EA0900EC5B20 /* MPMusicPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430139141921EA0900EC5B20 /* MPMusicPlayerController.m */; };
+		430139181921EA0900EC5B20 /* MPMusicPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430139141921EA0900EC5B20 /* MPMusicPlayerController.m */; };
+		4301391B1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139191921EA1B00EC5B20 /* MPNowPlayingInfoCenter.h */; };
+		4301391C1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139191921EA1B00EC5B20 /* MPNowPlayingInfoCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4301391D1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4301391A1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.m */; };
+		4301391E1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4301391A1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.m */; };
+		430139231921EA4900EC5B20 /* MPPlayableContentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139211921EA4900EC5B20 /* MPPlayableContentManager.h */; };
+		430139241921EA4900EC5B20 /* MPPlayableContentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139211921EA4900EC5B20 /* MPPlayableContentManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430139251921EA4900EC5B20 /* MPPlayableContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 430139221921EA4900EC5B20 /* MPPlayableContentManager.m */; };
+		430139261921EA4900EC5B20 /* MPPlayableContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 430139221921EA4900EC5B20 /* MPPlayableContentManager.m */; };
+		430139291921EA5300EC5B20 /* MPRemoteCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139271921EA5300EC5B20 /* MPRemoteCommand.h */; };
+		4301392A1921EA5300EC5B20 /* MPRemoteCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139271921EA5300EC5B20 /* MPRemoteCommand.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4301392B1921EA5300EC5B20 /* MPRemoteCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 430139281921EA5300EC5B20 /* MPRemoteCommand.m */; };
+		4301392C1921EA5300EC5B20 /* MPRemoteCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 430139281921EA5300EC5B20 /* MPRemoteCommand.m */; };
+		4301392F1921EA5E00EC5B20 /* MPRemoteCommandCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4301392D1921EA5E00EC5B20 /* MPRemoteCommandCenter.h */; };
+		430139301921EA5E00EC5B20 /* MPRemoteCommandCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4301392D1921EA5E00EC5B20 /* MPRemoteCommandCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430139311921EA5E00EC5B20 /* MPRemoteCommandCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4301392E1921EA5E00EC5B20 /* MPRemoteCommandCenter.m */; };
+		430139321921EA5E00EC5B20 /* MPRemoteCommandCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4301392E1921EA5E00EC5B20 /* MPRemoteCommandCenter.m */; };
+		430139351921EA6800EC5B20 /* MPRemoteCommandEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139331921EA6800EC5B20 /* MPRemoteCommandEvent.h */; };
+		430139361921EA6800EC5B20 /* MPRemoteCommandEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139331921EA6800EC5B20 /* MPRemoteCommandEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430139371921EA6800EC5B20 /* MPRemoteCommandEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 430139341921EA6800EC5B20 /* MPRemoteCommandEvent.m */; };
+		430139381921EA6800EC5B20 /* MPRemoteCommandEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 430139341921EA6800EC5B20 /* MPRemoteCommandEvent.m */; };
+		4301393B1921EA8E00EC5B20 /* MPVolumeSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139391921EA8E00EC5B20 /* MPVolumeSettings.h */; };
+		4301393C1921EA8E00EC5B20 /* MPVolumeSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139391921EA8E00EC5B20 /* MPVolumeSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4301393D1921EA8E00EC5B20 /* MPVolumeSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 4301393A1921EA8E00EC5B20 /* MPVolumeSettings.m */; };
+		4301393E1921EA8E00EC5B20 /* MPVolumeSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 4301393A1921EA8E00EC5B20 /* MPVolumeSettings.m */; };
+		430139411921EA9D00EC5B20 /* MPVolumeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4301393F1921EA9D00EC5B20 /* MPVolumeView.h */; };
+		430139421921EA9D00EC5B20 /* MPVolumeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4301393F1921EA9D00EC5B20 /* MPVolumeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430139431921EA9D00EC5B20 /* MPVolumeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 430139401921EA9D00EC5B20 /* MPVolumeView.m */; };
+		430139441921EA9D00EC5B20 /* MPVolumeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 430139401921EA9D00EC5B20 /* MPVolumeView.m */; };
+		430139451921F77900EC5B20 /* MPMediaPlayback.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138F41921E96700EC5B20 /* MPMediaPlayback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430139461921FC9900EC5B20 /* MPPlayableContentDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 4301391F1921EA2A00EC5B20 /* MPPlayableContentDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430139471921FC9C00EC5B20 /* MPPlayableContentDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 4301391F1921EA2A00EC5B20 /* MPPlayableContentDataSource.h */; };
+		430139481921FCA100EC5B20 /* MPPlayableContentDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139201921EA3C00EC5B20 /* MPPlayableContentDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		430139491921FCA100EC5B20 /* MPPlayableContentDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139201921EA3C00EC5B20 /* MPPlayableContentDelegate.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		430138901921E68300EC5B20 /* MediaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		430138931921E68300EC5B20 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		430138961921E68300EC5B20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		430138971921E68300EC5B20 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		430138981921E68300EC5B20 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4301389B1921E68300EC5B20 /* MediaPlayer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MediaPlayer-Info.plist"; sourceTree = "<group>"; };
+		4301389D1921E68300EC5B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4301389F1921E68300EC5B20 /* MediaPlayer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MediaPlayer-Prefix.pch"; sourceTree = "<group>"; };
+		430138A01921E68300EC5B20 /* MediaPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaPlayer.h; sourceTree = "<group>"; };
+		430138C91921E6DE00EC5B20 /* MediaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		430138CC1921E70B00EC5B20 /* Android.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Android.xcconfig; sourceTree = "<group>"; };
+		430138CE1921E88000EC5B20 /* MediaPlayerDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MediaPlayerDefines.h; path = ../../../Documents/MediaPlayerDefines.h; sourceTree = "<group>"; };
+		430138D01921E8C700EC5B20 /* MPContentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPContentItem.h; sourceTree = "<group>"; };
+		430138D11921E8C700EC5B20 /* MPContentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPContentItem.m; sourceTree = "<group>"; };
+		430138D61921E8E200EC5B20 /* MPMediaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaEntity.h; sourceTree = "<group>"; };
+		430138D71921E8E200EC5B20 /* MPMediaEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMediaEntity.m; sourceTree = "<group>"; };
+		430138DC1921E8F800EC5B20 /* MPMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaItem.h; sourceTree = "<group>"; };
+		430138DD1921E8F800EC5B20 /* MPMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMediaItem.m; sourceTree = "<group>"; };
+		430138E21921E90A00EC5B20 /* MPMediaItemCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaItemCollection.h; sourceTree = "<group>"; };
+		430138E31921E90A00EC5B20 /* MPMediaItemCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMediaItemCollection.m; sourceTree = "<group>"; };
+		430138E81921E91D00EC5B20 /* MPMediaLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaLibrary.h; sourceTree = "<group>"; };
+		430138E91921E91D00EC5B20 /* MPMediaLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMediaLibrary.m; sourceTree = "<group>"; };
+		430138EE1921E94100EC5B20 /* MPMediaPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaPickerController.h; sourceTree = "<group>"; };
+		430138EF1921E94100EC5B20 /* MPMediaPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMediaPickerController.m; sourceTree = "<group>"; };
+		430138F41921E96700EC5B20 /* MPMediaPlayback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMediaPlayback.h; sourceTree = "<group>"; };
+		430138F51921E9AF00EC5B20 /* MPMediaPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaPlaylist.h; sourceTree = "<group>"; };
+		430138F61921E9AF00EC5B20 /* MPMediaPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMediaPlaylist.m; sourceTree = "<group>"; };
+		430138FB1921E9C300EC5B20 /* MPMediaQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaQuery.h; sourceTree = "<group>"; };
+		430138FC1921E9C300EC5B20 /* MPMediaQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMediaQuery.m; sourceTree = "<group>"; };
+		430139011921E9D400EC5B20 /* MPMediaQuerySection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaQuerySection.h; sourceTree = "<group>"; };
+		430139021921E9D400EC5B20 /* MPMediaQuerySection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMediaQuerySection.m; sourceTree = "<group>"; };
+		430139071921E9E500EC5B20 /* MPMoviePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMoviePlayerController.h; sourceTree = "<group>"; };
+		430139081921E9E500EC5B20 /* MPMoviePlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMoviePlayerController.m; sourceTree = "<group>"; };
+		4301390D1921E9F500EC5B20 /* MPMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMoviePlayerViewController.h; sourceTree = "<group>"; };
+		4301390E1921E9F500EC5B20 /* MPMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMoviePlayerViewController.m; sourceTree = "<group>"; };
+		430139131921EA0900EC5B20 /* MPMusicPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMusicPlayerController.h; sourceTree = "<group>"; };
+		430139141921EA0900EC5B20 /* MPMusicPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMusicPlayerController.m; sourceTree = "<group>"; };
+		430139191921EA1B00EC5B20 /* MPNowPlayingInfoCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPNowPlayingInfoCenter.h; sourceTree = "<group>"; };
+		4301391A1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPNowPlayingInfoCenter.m; sourceTree = "<group>"; };
+		4301391F1921EA2A00EC5B20 /* MPPlayableContentDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPPlayableContentDataSource.h; sourceTree = "<group>"; };
+		430139201921EA3C00EC5B20 /* MPPlayableContentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPPlayableContentDelegate.h; sourceTree = "<group>"; };
+		430139211921EA4900EC5B20 /* MPPlayableContentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPlayableContentManager.h; sourceTree = "<group>"; };
+		430139221921EA4900EC5B20 /* MPPlayableContentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPlayableContentManager.m; sourceTree = "<group>"; };
+		430139271921EA5300EC5B20 /* MPRemoteCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRemoteCommand.h; sourceTree = "<group>"; };
+		430139281921EA5300EC5B20 /* MPRemoteCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPRemoteCommand.m; sourceTree = "<group>"; };
+		4301392D1921EA5E00EC5B20 /* MPRemoteCommandCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRemoteCommandCenter.h; sourceTree = "<group>"; };
+		4301392E1921EA5E00EC5B20 /* MPRemoteCommandCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPRemoteCommandCenter.m; sourceTree = "<group>"; };
+		430139331921EA6800EC5B20 /* MPRemoteCommandEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRemoteCommandEvent.h; sourceTree = "<group>"; };
+		430139341921EA6800EC5B20 /* MPRemoteCommandEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPRemoteCommandEvent.m; sourceTree = "<group>"; };
+		430139391921EA8E00EC5B20 /* MPVolumeSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPVolumeSettings.h; sourceTree = "<group>"; };
+		4301393A1921EA8E00EC5B20 /* MPVolumeSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVolumeSettings.m; sourceTree = "<group>"; };
+		4301393F1921EA9D00EC5B20 /* MPVolumeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPVolumeView.h; sourceTree = "<group>"; };
+		430139401921EA9D00EC5B20 /* MPVolumeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVolumeView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4301388C1921E68300EC5B20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				430138941921E68300EC5B20 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		430138C11921E6DE00EC5B20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		430138861921E68300EC5B20 = {
+			isa = PBXGroup;
+			children = (
+				430138CB1921E70B00EC5B20 /* xcconfig */,
+				430138991921E68300EC5B20 /* MediaPlayer */,
+				430138921921E68300EC5B20 /* Frameworks */,
+				430138911921E68300EC5B20 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		430138911921E68300EC5B20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				430138901921E68300EC5B20 /* MediaPlayer.framework */,
+				430138C91921E6DE00EC5B20 /* MediaPlayer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		430138921921E68300EC5B20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				430138931921E68300EC5B20 /* Cocoa.framework */,
+				430138951921E68300EC5B20 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		430138951921E68300EC5B20 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				430138961921E68300EC5B20 /* Foundation.framework */,
+				430138971921E68300EC5B20 /* CoreData.framework */,
+				430138981921E68300EC5B20 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		430138991921E68300EC5B20 /* MediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				430138A01921E68300EC5B20 /* MediaPlayer.h */,
+				430138CE1921E88000EC5B20 /* MediaPlayerDefines.h */,
+				430138D01921E8C700EC5B20 /* MPContentItem.h */,
+				430138D11921E8C700EC5B20 /* MPContentItem.m */,
+				430138D61921E8E200EC5B20 /* MPMediaEntity.h */,
+				430138D71921E8E200EC5B20 /* MPMediaEntity.m */,
+				430138DC1921E8F800EC5B20 /* MPMediaItem.h */,
+				430138DD1921E8F800EC5B20 /* MPMediaItem.m */,
+				430138E21921E90A00EC5B20 /* MPMediaItemCollection.h */,
+				430138E31921E90A00EC5B20 /* MPMediaItemCollection.m */,
+				430138E81921E91D00EC5B20 /* MPMediaLibrary.h */,
+				430138E91921E91D00EC5B20 /* MPMediaLibrary.m */,
+				430138EE1921E94100EC5B20 /* MPMediaPickerController.h */,
+				430138EF1921E94100EC5B20 /* MPMediaPickerController.m */,
+				430138F41921E96700EC5B20 /* MPMediaPlayback.h */,
+				430138F51921E9AF00EC5B20 /* MPMediaPlaylist.h */,
+				430138F61921E9AF00EC5B20 /* MPMediaPlaylist.m */,
+				430138FB1921E9C300EC5B20 /* MPMediaQuery.h */,
+				430138FC1921E9C300EC5B20 /* MPMediaQuery.m */,
+				430139011921E9D400EC5B20 /* MPMediaQuerySection.h */,
+				430139021921E9D400EC5B20 /* MPMediaQuerySection.m */,
+				430139071921E9E500EC5B20 /* MPMoviePlayerController.h */,
+				430139081921E9E500EC5B20 /* MPMoviePlayerController.m */,
+				4301390D1921E9F500EC5B20 /* MPMoviePlayerViewController.h */,
+				4301390E1921E9F500EC5B20 /* MPMoviePlayerViewController.m */,
+				430139131921EA0900EC5B20 /* MPMusicPlayerController.h */,
+				430139141921EA0900EC5B20 /* MPMusicPlayerController.m */,
+				430139191921EA1B00EC5B20 /* MPNowPlayingInfoCenter.h */,
+				4301391A1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.m */,
+				4301391F1921EA2A00EC5B20 /* MPPlayableContentDataSource.h */,
+				430139201921EA3C00EC5B20 /* MPPlayableContentDelegate.h */,
+				430139211921EA4900EC5B20 /* MPPlayableContentManager.h */,
+				430139221921EA4900EC5B20 /* MPPlayableContentManager.m */,
+				430139271921EA5300EC5B20 /* MPRemoteCommand.h */,
+				430139281921EA5300EC5B20 /* MPRemoteCommand.m */,
+				4301392D1921EA5E00EC5B20 /* MPRemoteCommandCenter.h */,
+				4301392E1921EA5E00EC5B20 /* MPRemoteCommandCenter.m */,
+				430139331921EA6800EC5B20 /* MPRemoteCommandEvent.h */,
+				430139341921EA6800EC5B20 /* MPRemoteCommandEvent.m */,
+				430139391921EA8E00EC5B20 /* MPVolumeSettings.h */,
+				4301393A1921EA8E00EC5B20 /* MPVolumeSettings.m */,
+				4301393F1921EA9D00EC5B20 /* MPVolumeView.h */,
+				430139401921EA9D00EC5B20 /* MPVolumeView.m */,
+				4301389A1921E68300EC5B20 /* Supporting Files */,
+			);
+			path = MediaPlayer;
+			sourceTree = "<group>";
+		};
+		4301389A1921E68300EC5B20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4301389B1921E68300EC5B20 /* MediaPlayer-Info.plist */,
+				4301389C1921E68300EC5B20 /* InfoPlist.strings */,
+				4301389F1921E68300EC5B20 /* MediaPlayer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		430138CB1921E70B00EC5B20 /* xcconfig */ = {
+			isa = PBXGroup;
+			children = (
+				430138CC1921E70B00EC5B20 /* Android.xcconfig */,
+			);
+			path = xcconfig;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4301388D1921E68300EC5B20 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				430139411921EA9D00EC5B20 /* MPVolumeView.h in Headers */,
+				4301391B1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.h in Headers */,
+				430139291921EA5300EC5B20 /* MPRemoteCommand.h in Headers */,
+				430138F71921E9AF00EC5B20 /* MPMediaPlaylist.h in Headers */,
+				430139091921E9E500EC5B20 /* MPMoviePlayerController.h in Headers */,
+				430139491921FCA100EC5B20 /* MPPlayableContentDelegate.h in Headers */,
+				4301393B1921EA8E00EC5B20 /* MPVolumeSettings.h in Headers */,
+				4301390F1921E9F500EC5B20 /* MPMoviePlayerViewController.h in Headers */,
+				430138D21921E8C700EC5B20 /* MPContentItem.h in Headers */,
+				4301392F1921EA5E00EC5B20 /* MPRemoteCommandCenter.h in Headers */,
+				430139351921EA6800EC5B20 /* MPRemoteCommandEvent.h in Headers */,
+				430138E41921E90B00EC5B20 /* MPMediaItemCollection.h in Headers */,
+				430138F01921E94100EC5B20 /* MPMediaPickerController.h in Headers */,
+				430139231921EA4900EC5B20 /* MPPlayableContentManager.h in Headers */,
+				430138DE1921E8F800EC5B20 /* MPMediaItem.h in Headers */,
+				430139031921E9D400EC5B20 /* MPMediaQuerySection.h in Headers */,
+				430138D81921E8E200EC5B20 /* MPMediaEntity.h in Headers */,
+				430139471921FC9C00EC5B20 /* MPPlayableContentDataSource.h in Headers */,
+				430138EA1921E91D00EC5B20 /* MPMediaLibrary.h in Headers */,
+				430139151921EA0900EC5B20 /* MPMusicPlayerController.h in Headers */,
+				430138FD1921E9C300EC5B20 /* MPMediaQuery.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		430138C31921E6DE00EC5B20 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				430139161921EA0900EC5B20 /* MPMusicPlayerController.h in Headers */,
+				430139101921E9F500EC5B20 /* MPMoviePlayerViewController.h in Headers */,
+				430138D31921E8C700EC5B20 /* MPContentItem.h in Headers */,
+				4301391C1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.h in Headers */,
+				430139361921EA6800EC5B20 /* MPRemoteCommandEvent.h in Headers */,
+				430139451921F77900EC5B20 /* MPMediaPlayback.h in Headers */,
+				430138DF1921E8F800EC5B20 /* MPMediaItem.h in Headers */,
+				430139301921EA5E00EC5B20 /* MPRemoteCommandCenter.h in Headers */,
+				430138F81921E9AF00EC5B20 /* MPMediaPlaylist.h in Headers */,
+				430139041921E9D400EC5B20 /* MPMediaQuerySection.h in Headers */,
+				4301393C1921EA8E00EC5B20 /* MPVolumeSettings.h in Headers */,
+				4301392A1921EA5300EC5B20 /* MPRemoteCommand.h in Headers */,
+				430138EB1921E91D00EC5B20 /* MPMediaLibrary.h in Headers */,
+				430139461921FC9900EC5B20 /* MPPlayableContentDataSource.h in Headers */,
+				430139481921FCA100EC5B20 /* MPPlayableContentDelegate.h in Headers */,
+				430139421921EA9D00EC5B20 /* MPVolumeView.h in Headers */,
+				430138FE1921E9C300EC5B20 /* MPMediaQuery.h in Headers */,
+				4301390A1921E9E500EC5B20 /* MPMoviePlayerController.h in Headers */,
+				430139241921EA4900EC5B20 /* MPPlayableContentManager.h in Headers */,
+				430138F11921E94100EC5B20 /* MPMediaPickerController.h in Headers */,
+				430138E51921E90B00EC5B20 /* MPMediaItemCollection.h in Headers */,
+				430138CD1921E74900EC5B20 /* MediaPlayer.h in Headers */,
+				430138CF1921E88500EC5B20 /* MediaPlayerDefines.h in Headers */,
+				430138D91921E8E200EC5B20 /* MPMediaEntity.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4301388F1921E68300EC5B20 /* MediaPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 430138B81921E68300EC5B20 /* Build configuration list for PBXNativeTarget "MediaPlayer" */;
+			buildPhases = (
+				4301388B1921E68300EC5B20 /* Sources */,
+				4301388C1921E68300EC5B20 /* Frameworks */,
+				4301388D1921E68300EC5B20 /* Headers */,
+				4301388E1921E68300EC5B20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MediaPlayer;
+			productName = MediaPlayer;
+			productReference = 430138901921E68300EC5B20 /* MediaPlayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		430138BE1921E6DE00EC5B20 /* MediaPlayer-Android */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 430138C61921E6DE00EC5B20 /* Build configuration list for PBXNativeTarget "MediaPlayer-Android" */;
+			buildPhases = (
+				430138BF1921E6DE00EC5B20 /* Sources */,
+				430138C11921E6DE00EC5B20 /* Frameworks */,
+				430138C31921E6DE00EC5B20 /* Headers */,
+				430138C41921E6DE00EC5B20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MediaPlayer-Android";
+			productName = MediaPlayer;
+			productReference = 430138C91921E6DE00EC5B20 /* MediaPlayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		430138871921E68300EC5B20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Shanghai TinyNetwork Inc.";
+			};
+			buildConfigurationList = 4301388A1921E68300EC5B20 /* Build configuration list for PBXProject "MediaPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 430138861921E68300EC5B20;
+			productRefGroup = 430138911921E68300EC5B20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4301388F1921E68300EC5B20 /* MediaPlayer */,
+				430138BE1921E6DE00EC5B20 /* MediaPlayer-Android */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4301388E1921E68300EC5B20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4301389E1921E68300EC5B20 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		430138C41921E6DE00EC5B20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				430138C51921E6DE00EC5B20 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4301388B1921E68300EC5B20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				430138DA1921E8E200EC5B20 /* MPMediaEntity.m in Sources */,
+				4301392B1921EA5300EC5B20 /* MPRemoteCommand.m in Sources */,
+				430138E01921E8F800EC5B20 /* MPMediaItem.m in Sources */,
+				430138E61921E90B00EC5B20 /* MPMediaItemCollection.m in Sources */,
+				430138D41921E8C700EC5B20 /* MPContentItem.m in Sources */,
+				4301393D1921EA8E00EC5B20 /* MPVolumeSettings.m in Sources */,
+				430139251921EA4900EC5B20 /* MPPlayableContentManager.m in Sources */,
+				430139111921E9F500EC5B20 /* MPMoviePlayerViewController.m in Sources */,
+				430138FF1921E9C300EC5B20 /* MPMediaQuery.m in Sources */,
+				430139051921E9D400EC5B20 /* MPMediaQuerySection.m in Sources */,
+				430139371921EA6800EC5B20 /* MPRemoteCommandEvent.m in Sources */,
+				430139171921EA0900EC5B20 /* MPMusicPlayerController.m in Sources */,
+				4301390B1921E9E500EC5B20 /* MPMoviePlayerController.m in Sources */,
+				430139311921EA5E00EC5B20 /* MPRemoteCommandCenter.m in Sources */,
+				430138F91921E9AF00EC5B20 /* MPMediaPlaylist.m in Sources */,
+				4301391D1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.m in Sources */,
+				430139431921EA9D00EC5B20 /* MPVolumeView.m in Sources */,
+				430138EC1921E91D00EC5B20 /* MPMediaLibrary.m in Sources */,
+				430138F21921E94100EC5B20 /* MPMediaPickerController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		430138BF1921E6DE00EC5B20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				430138DB1921E8E200EC5B20 /* MPMediaEntity.m in Sources */,
+				4301392C1921EA5300EC5B20 /* MPRemoteCommand.m in Sources */,
+				430138E11921E8F800EC5B20 /* MPMediaItem.m in Sources */,
+				430138E71921E90B00EC5B20 /* MPMediaItemCollection.m in Sources */,
+				430138D51921E8C700EC5B20 /* MPContentItem.m in Sources */,
+				4301393E1921EA8E00EC5B20 /* MPVolumeSettings.m in Sources */,
+				430139261921EA4900EC5B20 /* MPPlayableContentManager.m in Sources */,
+				430139121921E9F500EC5B20 /* MPMoviePlayerViewController.m in Sources */,
+				430139001921E9C300EC5B20 /* MPMediaQuery.m in Sources */,
+				430139061921E9D400EC5B20 /* MPMediaQuerySection.m in Sources */,
+				430139381921EA6800EC5B20 /* MPRemoteCommandEvent.m in Sources */,
+				430139181921EA0900EC5B20 /* MPMusicPlayerController.m in Sources */,
+				4301390C1921E9E500EC5B20 /* MPMoviePlayerController.m in Sources */,
+				430139321921EA5E00EC5B20 /* MPRemoteCommandCenter.m in Sources */,
+				430138FA1921E9AF00EC5B20 /* MPMediaPlaylist.m in Sources */,
+				4301391E1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.m in Sources */,
+				430139441921EA9D00EC5B20 /* MPVolumeView.m in Sources */,
+				430138ED1921E91D00EC5B20 /* MPMediaLibrary.m in Sources */,
+				430138F31921E94100EC5B20 /* MPMediaPickerController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4301389C1921E68300EC5B20 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4301389D1921E68300EC5B20 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		430138B61921E68300EC5B20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		430138B71921E68300EC5B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		430138B91921E68300EC5B20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MediaPlayer/MediaPlayer-Prefix.pch";
+				INFOPLIST_FILE = "MediaPlayer/MediaPlayer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		430138BA1921E68300EC5B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MediaPlayer/MediaPlayer-Prefix.pch";
+				INFOPLIST_FILE = "MediaPlayer/MediaPlayer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		430138C71921E6DE00EC5B20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 430138CC1921E70B00EC5B20 /* Android.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MediaPlayer/MediaPlayer-Prefix.pch";
+				INFOPLIST_FILE = "MediaPlayer/MediaPlayer-Info.plist";
+				PRODUCT_NAME = MediaPlayer;
+				SDKROOT = macosx0.0;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		430138C81921E6DE00EC5B20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 430138CC1921E70B00EC5B20 /* Android.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MediaPlayer/MediaPlayer-Prefix.pch";
+				INFOPLIST_FILE = "MediaPlayer/MediaPlayer-Info.plist";
+				PRODUCT_NAME = MediaPlayer;
+				SDKROOT = macosx0.0;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4301388A1921E68300EC5B20 /* Build configuration list for PBXProject "MediaPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				430138B61921E68300EC5B20 /* Debug */,
+				430138B71921E68300EC5B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		430138B81921E68300EC5B20 /* Build configuration list for PBXNativeTarget "MediaPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				430138B91921E68300EC5B20 /* Debug */,
+				430138BA1921E68300EC5B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		430138C61921E6DE00EC5B20 /* Build configuration list for PBXNativeTarget "MediaPlayer-Android" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				430138C71921E6DE00EC5B20 /* Debug */,
+				430138C81921E6DE00EC5B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 430138871921E68300EC5B20 /* Project object */;
+}
