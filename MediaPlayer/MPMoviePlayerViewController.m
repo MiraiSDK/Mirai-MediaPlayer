@@ -7,6 +7,7 @@
 //
 
 #import "MPMoviePlayerViewController.h"
+#import "MPMoviePlayerController.h"
 
 @interface MPMoviePlayerViewController ()
 
@@ -17,9 +18,28 @@
 {
     self = [super init];
     if (self) {
+        _moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:contentURL];
     }
     return self;
 }
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self.view addSubview:[_moviePlayer view]];
+    
+}
+- (BOOL)shouldAutorotate
+{
+    return [super shouldAutorotate];
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return [super supportedInterfaceOrientations];
+}
+
 @end
 
 @implementation UIViewController (MPMoviePlayerViewController)

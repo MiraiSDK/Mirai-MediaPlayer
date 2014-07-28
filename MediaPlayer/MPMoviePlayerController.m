@@ -7,21 +7,207 @@
 //
 
 #import "MPMoviePlayerController.h"
+#import "MPMediaView.h"
+#import <TNJavaHelper/TNJavaHelper.h>
 
-@implementation MPMoviePlayerController
+#import <GLES2/gl2.h>
+#import <GLES2/gl2ext.h>
+#import <OpenGLES/EAGL.h>
+#import <OpenGLES/EAGLDrawable.h>
+
+#import <QuartzCore/QuartzCore.h>
+
+
+@interface MPMoviePlayerController ()
+@property(nonatomic, readonly) MPMovieMediaTypeMask movieMediaTypes;
+@property(nonatomic) MPMovieSourceType movieSourceType;
+@property(nonatomic, readonly) NSTimeInterval duration;
+@property(nonatomic, readonly) NSTimeInterval playableDuration;
+@property(nonatomic, readonly) CGSize naturalSize;
+@property(nonatomic) NSTimeInterval initialPlaybackTime;
+@property(nonatomic) NSTimeInterval endPlaybackTime;
+@property(nonatomic) BOOL allowsAirPlay;
+@property(nonatomic, readonly, getter=isAirPlayVideoActive) BOOL airPlayVideoActive;
+
+@property (nonatomic, readonly) MPMovieAccessLog *accessLog;
+@property (nonatomic, readonly) MPMovieErrorLog *errorLog;
+
+@property(nonatomic) BOOL useApplicationAudioSession;// NS_DEPRECATED_IOS(3_2, 6_0);
+
+@end
+
+@implementation MPMoviePlayerController {
+    jobject _mediaPlayer;
+    jclass _mediaPlayerClass;
+    
+    jobject _surfaceTexture;
+}
+@synthesize currentPlaybackTime = _currentPlaybackTime;
+@synthesize currentPlaybackRate = _currentPlaybackRate;
+@synthesize view = _view;
+@synthesize isPreparedToPlay = _isPreparedToPlay;
+
 - (id)initWithContentURL:(NSURL *)url
 {
+    NSParameterAssert(url);
+    
     self = [super init];
     if (self) {
+        _contentURL = [url copy];
+        _shouldAutoplay = YES;
         
+        
+        [self createJavaMediaPlayer];
+        
+        MPMediaView *v = [[MPMediaView alloc] initWithFrame:CGRectMake(0, 0, 500, 500) aMediaPlayer:_mediaPlayer];
+        _view = v;
+        
+        [self setJavaDataSource:url];
     }
     return self;
+}
+
+- (void)createJavaMediaPlayer
+{
+    JNIEnv *env = [[TNJavaHelper sharedHelper] env];
+    
+    // create JAVA MediaPlayer object
+    
+    jclass class = (*env)->FindClass(env,"android/media/MediaPlayer");
+    if (class == NULL) {
+        NSLog(@"class not found: %@",@"android/media/MediaPlayer");
+        return;
+    }
+    _mediaPlayerClass = class;
+    
+    jmethodID mid = (*env)->GetMethodID(env,class,"<init>","()V");
+    if (mid == NULL) {
+        NSLog(@"method id not found:%@",@"init  ()V");
+        return;
+    }
+    
+    jobject object = (*env)->NewObject(env,class,mid);
+    
+    if (object == NULL) {
+        NSLog(@"create object failed");
+        return;
+    }
+    
+    _mediaPlayer = object;
+}
+
+- (void)setJavaDataSource:(NSURL *)url
+{
+    JNIEnv *env = [[TNJavaHelper sharedHelper] env];
+    
+    jmethodID mid = (*env)->GetMethodID(env,_mediaPlayerClass,"setDataSource","(Ljava/lang/String;)V");
+    if (mid == NULL) {
+        NSLog(@"method id not found:%@",@"setDataSource");
+        return;
+    }
+    
+    jstring path = (*env)->NewStringUTF(env,url.path.UTF8String);
+    
+    (*env)->CallVoidMethod(env,_mediaPlayer,mid,path);
+    
 }
 
 - (void)setFullscreen:(BOOL)fullscreen animated:(BOOL)animated
 {
     
 }
+
+#pragma mark - MPMediaPlayback
+- (void)prepareToPlay
+{
+    JNIEnv *env = [[TNJavaHelper sharedHelper] env];
+
+    jmethodID mid = (*env)->GetMethodID(env,_mediaPlayerClass,"prepare","()V");
+    if (mid == NULL) {
+        NSLog(@"method id not found:%@",@"prepare ()V");
+        return;
+    }
+    
+    (*env)->CallVoidMethod(env, _mediaPlayer, mid);
+    
+    _isPreparedToPlay = YES;
+}
+
+- (BOOL)isPreparedToPlay
+{
+    return _isPreparedToPlay;
+}
+
+- (void)play
+{
+    if (![self isPreparedToPlay]) {
+        [self prepareToPlay];
+    }
+    
+    JNIEnv *env = [[TNJavaHelper sharedHelper] env];
+
+    jmethodID mid = (*env)->GetMethodID(env,_mediaPlayerClass,"start","()V");
+    if (mid == NULL) {
+        NSLog(@"method id not found:%@",@"start ()V");
+        return;
+    }
+    (*env)->CallVoidMethod(env, _mediaPlayer, mid);
+}
+
+- (void)pause
+{
+    JNIEnv *env = [[TNJavaHelper sharedHelper] env];
+    
+    jmethodID mid = (*env)->GetMethodID(env,_mediaPlayerClass,"pause","()V");
+    if (mid == NULL) {
+        NSLog(@"method id not found:%@",@"pause ()V");
+        return;
+    }
+    (*env)->CallVoidMethod(env, _mediaPlayer, mid);
+}
+
+- (void)stop
+{
+    JNIEnv *env = [[TNJavaHelper sharedHelper] env];
+    
+    jmethodID mid = (*env)->GetMethodID(env,_mediaPlayerClass,"stop","()V");
+    if (mid == NULL) {
+        NSLog(@"method id not found:%@",@"stop ()V");
+        return;
+    }
+    (*env)->CallVoidMethod(env, _mediaPlayer, mid);
+
+}
+
+// The current playback time of the now playing item in seconds.
+- (NSTimeInterval)currentPlaybackTime
+{
+    return 0.0;
+}
+
+- (void)setCurrentPlaybackTime:(NSTimeInterval)currentPlaybackTime
+{
+    
+}
+
+-(float)currentPlaybackRate
+{
+    return 0.0f;
+}
+
+- (void)beginSeekingForward
+{
+    
+}
+- (void)beginSeekingBackward
+{
+    
+}
+- (void)endSeeking
+{
+    
+}
+
 @end
 
 @implementation MPMoviePlayerController (MPMovieProperties)

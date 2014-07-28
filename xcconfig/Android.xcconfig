@@ -9,7 +9,7 @@
 DEPLOYMENT_LOCATION = YES
 DSTROOT = /
 INSTALL_PATH = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk/System/Library/Frameworks/
-OTHER_LDFLAGS= -shared $(inherited) -lgnustl_shared -lobjc
+OTHER_LDFLAGS= -shared $(inherited) -Wl,-z,defs -lTNJavaHelper -lgnustl_shared -ldispatch -lobjc
 OTHER_CFLAGS= $(inherited) -DANDROID=1 -fblocks
 
 LD_DEPENDENCY_INFO_FILE=
