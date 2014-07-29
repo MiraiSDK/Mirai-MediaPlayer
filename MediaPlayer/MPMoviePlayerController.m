@@ -19,6 +19,8 @@
 
 
 @interface MPMoviePlayerController ()
+@property(nonatomic, readwrite) MPMoviePlaybackState playbackState;
+
 @property(nonatomic, readonly) MPMovieMediaTypeMask movieMediaTypes;
 @property(nonatomic) MPMovieSourceType movieSourceType;
 @property(nonatomic, readonly) NSTimeInterval duration;
@@ -55,6 +57,7 @@
     if (self) {
         _contentURL = [url copy];
         _shouldAutoplay = YES;
+        _playbackState = MPMoviePlaybackStateStopped;
         
         
         [self createJavaMediaPlayer];
@@ -65,6 +68,14 @@
         [self setJavaDataSource:url];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    JNIEnv *env = [[TNJavaHelper sharedHelper] env];
+    
+    (*env)->DeleteLocalRef(env, _mediaPlayer);
+    (*env)->DeleteLocalRef(env, _mediaPlayerClass);
 }
 
 - (void)createJavaMediaPlayer
@@ -152,6 +163,8 @@
         return;
     }
     (*env)->CallVoidMethod(env, _mediaPlayer, mid);
+    
+    self.playbackState = MPMoviePlaybackStatePlaying;
 }
 
 - (void)pause
@@ -164,6 +177,8 @@
         return;
     }
     (*env)->CallVoidMethod(env, _mediaPlayer, mid);
+    
+    self.playbackState = MPMoviePlaybackStatePaused;
 }
 
 - (void)stop
@@ -177,6 +192,7 @@
     }
     (*env)->CallVoidMethod(env, _mediaPlayer, mid);
 
+    self.playbackState = MPMoviePlaybackStateStopped;
 }
 
 // The current playback time of the now playing item in seconds.
