@@ -11,7 +11,6 @@
 		4301389E1921E68300EC5B20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4301389C1921E68300EC5B20 /* InfoPlist.strings */; };
 		430138C51921E6DE00EC5B20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4301389C1921E68300EC5B20 /* InfoPlist.strings */; };
 		430138CD1921E74900EC5B20 /* MediaPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138A01921E68300EC5B20 /* MediaPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		430138CF1921E88500EC5B20 /* MediaPlayerDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138CE1921E88000EC5B20 /* MediaPlayerDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		430138D21921E8C700EC5B20 /* MPContentItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138D01921E8C700EC5B20 /* MPContentItem.h */; };
 		430138D31921E8C700EC5B20 /* MPContentItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138D01921E8C700EC5B20 /* MPContentItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		430138D41921E8C700EC5B20 /* MPContentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 430138D11921E8C700EC5B20 /* MPContentItem.m */; };
@@ -93,6 +92,7 @@
 		430139471921FC9C00EC5B20 /* MPPlayableContentDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 4301391F1921EA2A00EC5B20 /* MPPlayableContentDataSource.h */; };
 		430139481921FCA100EC5B20 /* MPPlayableContentDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139201921EA3C00EC5B20 /* MPPlayableContentDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		430139491921FCA100EC5B20 /* MPPlayableContentDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139201921EA3C00EC5B20 /* MPPlayableContentDelegate.h */; };
+		43972E1B1997BF7C00EDD603 /* MediaPlayerDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 43972E1A1997BF7800EDD603 /* MediaPlayerDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43CA2A221954333A00B92F2C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CA2A211954333A00B92F2C /* CoreGraphics.framework */; };
 		43CA2A241954335500B92F2C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CA2A231954335500B92F2C /* UIKit.framework */; };
 		43CA2A261954336600B92F2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CA2A251954336600B92F2C /* Foundation.framework */; };
@@ -115,7 +115,6 @@
 		430138A01921E68300EC5B20 /* MediaPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaPlayer.h; sourceTree = "<group>"; };
 		430138C91921E6DE00EC5B20 /* MediaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		430138CC1921E70B00EC5B20 /* Android.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Android.xcconfig; sourceTree = "<group>"; };
-		430138CE1921E88000EC5B20 /* MediaPlayerDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MediaPlayerDefines.h; path = ../../../Documents/MediaPlayerDefines.h; sourceTree = "<group>"; };
 		430138D01921E8C700EC5B20 /* MPContentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPContentItem.h; sourceTree = "<group>"; };
 		430138D11921E8C700EC5B20 /* MPContentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPContentItem.m; sourceTree = "<group>"; };
 		430138D61921E8E200EC5B20 /* MPMediaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaEntity.h; sourceTree = "<group>"; };
@@ -157,6 +156,7 @@
 		4301393A1921EA8E00EC5B20 /* MPVolumeSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVolumeSettings.m; sourceTree = "<group>"; };
 		4301393F1921EA9D00EC5B20 /* MPVolumeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPVolumeView.h; sourceTree = "<group>"; };
 		430139401921EA9D00EC5B20 /* MPVolumeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVolumeView.m; sourceTree = "<group>"; };
+		43972E1A1997BF7800EDD603 /* MediaPlayerDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaPlayerDefines.h; sourceTree = "<group>"; };
 		43CA2A211954333A00B92F2C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = ../MiraSDK/Products/android/Xcode/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<group>"; };
 		43CA2A231954335500B92F2C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = ../MiraSDK/Products/android/Xcode/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = "<group>"; };
 		43CA2A251954336600B92F2C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = ../MiraSDK/Products/android/Xcode/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				430138A01921E68300EC5B20 /* MediaPlayer.h */,
-				430138CE1921E88000EC5B20 /* MediaPlayerDefines.h */,
+				43972E1A1997BF7800EDD603 /* MediaPlayerDefines.h */,
 				430138D01921E8C700EC5B20 /* MPContentItem.h */,
 				430138D11921E8C700EC5B20 /* MPContentItem.m */,
 				430138D61921E8E200EC5B20 /* MPMediaEntity.h */,
@@ -350,6 +350,7 @@
 				430138D31921E8C700EC5B20 /* MPContentItem.h in Headers */,
 				4301391C1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.h in Headers */,
 				430139361921EA6800EC5B20 /* MPRemoteCommandEvent.h in Headers */,
+				43972E1B1997BF7C00EDD603 /* MediaPlayerDefines.h in Headers */,
 				430139451921F77900EC5B20 /* MPMediaPlayback.h in Headers */,
 				430138DF1921E8F800EC5B20 /* MPMediaItem.h in Headers */,
 				430139301921EA5E00EC5B20 /* MPRemoteCommandCenter.h in Headers */,
@@ -368,7 +369,6 @@
 				430138F11921E94100EC5B20 /* MPMediaPickerController.h in Headers */,
 				430138E51921E90B00EC5B20 /* MPMediaItemCollection.h in Headers */,
 				430138CD1921E74900EC5B20 /* MediaPlayer.h in Headers */,
-				430138CF1921E88500EC5B20 /* MediaPlayerDefines.h in Headers */,
 				430138D91921E8E200EC5B20 /* MPMediaEntity.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
