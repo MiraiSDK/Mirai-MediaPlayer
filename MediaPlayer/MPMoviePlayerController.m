@@ -55,17 +55,23 @@
     
     self = [super init];
     if (self) {
+        
         _contentURL = [url copy];
         _shouldAutoplay = YES;
         _playbackState = MPMoviePlaybackStateStopped;
         
-        
-        [self createJavaMediaPlayer];
-        
-        MPMediaView *v = [[MPMediaView alloc] initWithFrame:CGRectMake(0, 0, 500, 500) aMediaPlayer:_mediaPlayer];
-        _view = v;
-        
-        [self setJavaDataSource:url];
+        BOOL isFileExist = [[NSFileManager defaultManager] fileExistsAtPath:url.path isDirectory:NULL];
+        if (!isFileExist) {
+            NSLog(@"[MoviePlayer] file is not exist:%@",url);
+        } else {
+            
+            [self createJavaMediaPlayer];
+            
+            MPMediaView *v = [[MPMediaView alloc] initWithFrame:CGRectMake(0, 0, 500, 500) aMediaPlayer:_mediaPlayer];
+            _view = v;
+            
+            [self setJavaDataSource:url];
+        }
     }
     return self;
 }
