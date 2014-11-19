@@ -60,15 +60,12 @@ typedef BOOL(^EAGLTextureUpdateCallback)(CATransform3D *t);
     return self;
 }
 
+// Assume call from rendering thread
 - (BOOL)updaeTextureIfNeeds:(CATransform3D *)transform
 {
-    // FIXME: Assume call from rendering thread
-    //        Assume no other method use java from rendering thread
-    // Should attach rendering thread on init
     static JNIEnv *env = NULL;
     if (env == NULL) {
-        JavaVM *vm = [[TNJavaHelper sharedHelper] vm];
-        (*vm)->AttachCurrentThread(vm,&env,NULL);
+        env = [[TNJavaHelper sharedHelper] env];
     }
     
     jmethodID mid = (*env)->GetMethodID(env,_movieRenderClass,"updateTextureIfNeeds","([F)I");
