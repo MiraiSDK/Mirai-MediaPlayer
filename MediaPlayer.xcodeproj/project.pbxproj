@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		430138941921E68300EC5B20 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430138931921E68300EC5B20 /* Cocoa.framework */; };
 		4301389E1921E68300EC5B20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4301389C1921E68300EC5B20 /* InfoPlist.strings */; };
 		430138C51921E6DE00EC5B20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4301389C1921E68300EC5B20 /* InfoPlist.strings */; };
 		430138CD1921E74900EC5B20 /* MediaPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 430138A01921E68300EC5B20 /* MediaPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -92,11 +91,14 @@
 		430139471921FC9C00EC5B20 /* MPPlayableContentDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 4301391F1921EA2A00EC5B20 /* MPPlayableContentDataSource.h */; };
 		430139481921FCA100EC5B20 /* MPPlayableContentDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139201921EA3C00EC5B20 /* MPPlayableContentDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		430139491921FCA100EC5B20 /* MPPlayableContentDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 430139201921EA3C00EC5B20 /* MPPlayableContentDelegate.h */; };
+		4395FBE91A36BE5F00C4C9C4 /* MPMovieControlView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4395FBE61A36BE5F00C4C9C4 /* MPMovieControlView.h */; };
+		4395FBEA1A36BE5F00C4C9C4 /* MPMovieControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4395FBE71A36BE5F00C4C9C4 /* MPMovieControlView.m */; };
+		4395FBEB1A36BE5F00C4C9C4 /* MPMovieControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4395FBE71A36BE5F00C4C9C4 /* MPMovieControlView.m */; };
+		4395FBED1A36BEED00C4C9C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4395FBEC1A36BEED00C4C9C4 /* UIKit.framework */; };
+		4395FBEF1A36BEF800C4C9C4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4395FBEE1A36BEF800C4C9C4 /* QuartzCore.framework */; };
+		4395FBF11A36BF0100C4C9C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4395FBF01A36BF0100C4C9C4 /* CoreGraphics.framework */; };
+		4395FBF41A36C25600C4C9C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4395FBF31A36C25600C4C9C4 /* Foundation.framework */; };
 		43972E1B1997BF7C00EDD603 /* MediaPlayerDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 43972E1A1997BF7800EDD603 /* MediaPlayerDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		43CA2A221954333A00B92F2C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CA2A211954333A00B92F2C /* CoreGraphics.framework */; };
-		43CA2A241954335500B92F2C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CA2A231954335500B92F2C /* UIKit.framework */; };
-		43CA2A261954336600B92F2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CA2A251954336600B92F2C /* Foundation.framework */; };
-		43F637DB198384D600C980B2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F637DA198384D500C980B2 /* QuartzCore.framework */; };
 		43F962671982484500530F4F /* MPMediaView.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F962651982484500530F4F /* MPMediaView.h */; };
 		43F962681982484500530F4F /* MPMediaView.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F962651982484500530F4F /* MPMediaView.h */; };
 		43F962691982484500530F4F /* MPMediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F962661982484500530F4F /* MPMediaView.m */; };
@@ -105,10 +107,6 @@
 
 /* Begin PBXFileReference section */
 		430138901921E68300EC5B20 /* MediaPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediaPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		430138931921E68300EC5B20 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		430138961921E68300EC5B20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		430138971921E68300EC5B20 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		430138981921E68300EC5B20 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		4301389B1921E68300EC5B20 /* MediaPlayer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MediaPlayer-Info.plist"; sourceTree = "<group>"; };
 		4301389D1921E68300EC5B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4301389F1921E68300EC5B20 /* MediaPlayer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MediaPlayer-Prefix.pch"; sourceTree = "<group>"; };
@@ -156,11 +154,13 @@
 		4301393A1921EA8E00EC5B20 /* MPVolumeSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVolumeSettings.m; sourceTree = "<group>"; };
 		4301393F1921EA9D00EC5B20 /* MPVolumeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPVolumeView.h; sourceTree = "<group>"; };
 		430139401921EA9D00EC5B20 /* MPVolumeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVolumeView.m; sourceTree = "<group>"; };
+		4395FBE61A36BE5F00C4C9C4 /* MPMovieControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMovieControlView.h; sourceTree = "<group>"; };
+		4395FBE71A36BE5F00C4C9C4 /* MPMovieControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMovieControlView.m; sourceTree = "<group>"; };
+		4395FBEC1A36BEED00C4C9C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4395FBEE1A36BEF800C4C9C4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4395FBF01A36BF0100C4C9C4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4395FBF31A36C25600C4C9C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43972E1A1997BF7800EDD603 /* MediaPlayerDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaPlayerDefines.h; sourceTree = "<group>"; };
-		43CA2A211954333A00B92F2C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = ../MiraSDK/Products/android/Xcode/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<group>"; };
-		43CA2A231954335500B92F2C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = ../MiraSDK/Products/android/Xcode/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = "<group>"; };
-		43CA2A251954336600B92F2C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = ../MiraSDK/Products/android/Xcode/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = "<group>"; };
-		43F637DA198384D500C980B2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = ../MiraSDK/Products/android/Xcode/Platforms/MacOSX.platform/Developer/SDKs/FakeMacOSX10.9.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = "<group>"; };
 		43F962651982484500530F4F /* MPMediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaView.h; sourceTree = "<group>"; };
 		43F962661982484500530F4F /* MPMediaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMediaView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,7 +170,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				430138941921E68300EC5B20 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,10 +177,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43F637DB198384D600C980B2 /* QuartzCore.framework in Frameworks */,
-				43CA2A261954336600B92F2C /* Foundation.framework in Frameworks */,
-				43CA2A241954335500B92F2C /* UIKit.framework in Frameworks */,
-				43CA2A221954333A00B92F2C /* CoreGraphics.framework in Frameworks */,
+				4395FBF41A36C25600C4C9C4 /* Foundation.framework in Frameworks */,
+				4395FBF11A36BF0100C4C9C4 /* CoreGraphics.framework in Frameworks */,
+				4395FBEF1A36BEF800C4C9C4 /* QuartzCore.framework in Frameworks */,
+				4395FBED1A36BEED00C4C9C4 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,24 +209,12 @@
 		430138921921E68300EC5B20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43F637DA198384D500C980B2 /* QuartzCore.framework */,
-				43CA2A251954336600B92F2C /* Foundation.framework */,
-				43CA2A231954335500B92F2C /* UIKit.framework */,
-				43CA2A211954333A00B92F2C /* CoreGraphics.framework */,
-				430138931921E68300EC5B20 /* Cocoa.framework */,
-				430138951921E68300EC5B20 /* Other Frameworks */,
+				4395FBF31A36C25600C4C9C4 /* Foundation.framework */,
+				4395FBF01A36BF0100C4C9C4 /* CoreGraphics.framework */,
+				4395FBEE1A36BEF800C4C9C4 /* QuartzCore.framework */,
+				4395FBEC1A36BEED00C4C9C4 /* UIKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		430138951921E68300EC5B20 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				430138961921E68300EC5B20 /* Foundation.framework */,
-				430138971921E68300EC5B20 /* CoreData.framework */,
-				430138981921E68300EC5B20 /* AppKit.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		430138991921E68300EC5B20 /* MediaPlayer */ = {
@@ -276,6 +263,8 @@
 				4301393A1921EA8E00EC5B20 /* MPVolumeSettings.m */,
 				4301393F1921EA9D00EC5B20 /* MPVolumeView.h */,
 				430139401921EA9D00EC5B20 /* MPVolumeView.m */,
+				4395FBE61A36BE5F00C4C9C4 /* MPMovieControlView.h */,
+				4395FBE71A36BE5F00C4C9C4 /* MPMovieControlView.m */,
 				4386D69019813F660050DCA3 /* MPMediaView */,
 				4301389A1921E68300EC5B20 /* Supporting Files */,
 			);
@@ -348,6 +337,7 @@
 				430139161921EA0900EC5B20 /* MPMusicPlayerController.h in Headers */,
 				430139101921E9F500EC5B20 /* MPMoviePlayerViewController.h in Headers */,
 				430138D31921E8C700EC5B20 /* MPContentItem.h in Headers */,
+				4395FBE91A36BE5F00C4C9C4 /* MPMovieControlView.h in Headers */,
 				4301391C1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.h in Headers */,
 				430139361921EA6800EC5B20 /* MPRemoteCommandEvent.h in Headers */,
 				43972E1B1997BF7C00EDD603 /* MediaPlayerDefines.h in Headers */,
@@ -494,6 +484,7 @@
 				430139371921EA6800EC5B20 /* MPRemoteCommandEvent.m in Sources */,
 				430139171921EA0900EC5B20 /* MPMusicPlayerController.m in Sources */,
 				4301390B1921E9E500EC5B20 /* MPMoviePlayerController.m in Sources */,
+				4395FBEA1A36BE5F00C4C9C4 /* MPMovieControlView.m in Sources */,
 				430139311921EA5E00EC5B20 /* MPRemoteCommandCenter.m in Sources */,
 				430138F91921E9AF00EC5B20 /* MPMediaPlaylist.m in Sources */,
 				4301391D1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.m in Sources */,
@@ -521,6 +512,7 @@
 				430139381921EA6800EC5B20 /* MPRemoteCommandEvent.m in Sources */,
 				430139181921EA0900EC5B20 /* MPMusicPlayerController.m in Sources */,
 				4301390C1921E9E500EC5B20 /* MPMoviePlayerController.m in Sources */,
+				4395FBEB1A36BE5F00C4C9C4 /* MPMovieControlView.m in Sources */,
 				430139321921EA5E00EC5B20 /* MPRemoteCommandCenter.m in Sources */,
 				430138FA1921E9AF00EC5B20 /* MPMediaPlaylist.m in Sources */,
 				4301391E1921EA1B00EC5B20 /* MPNowPlayingInfoCenter.m in Sources */,
@@ -578,7 +570,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx0.0;
 			};
 			name = Debug;
 		};
@@ -610,7 +602,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				SDKROOT = macosx;
+				SDKROOT = macosx0.0;
 			};
 			name = Release;
 		};
@@ -625,6 +617,7 @@
 				GCC_PREFIX_HEADER = "MediaPlayer/MediaPlayer-Prefix.pch";
 				INFOPLIST_FILE = "MediaPlayer/MediaPlayer-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -640,6 +633,7 @@
 				GCC_PREFIX_HEADER = "MediaPlayer/MediaPlayer-Prefix.pch";
 				INFOPLIST_FILE = "MediaPlayer/MediaPlayer-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -655,6 +649,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MediaPlayer/MediaPlayer-Prefix.pch";
 				INFOPLIST_FILE = "MediaPlayer/MediaPlayer-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = MediaPlayer;
 				SDKROOT = macosx0.0;
 				WRAPPER_EXTENSION = framework;
@@ -672,6 +667,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MediaPlayer/MediaPlayer-Prefix.pch";
 				INFOPLIST_FILE = "MediaPlayer/MediaPlayer-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = MediaPlayer;
 				SDKROOT = macosx0.0;
 				WRAPPER_EXTENSION = framework;

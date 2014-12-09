@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #include <jni.h>
 
+@class MPMoviePlayerController;
 @interface MPMediaView : UIView
 
-- (id)initWithFrame:(CGRect)frame aMediaPlayer:(jobject)mediaplayer;
+- (id)initWithFrame:(CGRect)frame aMediaPlayer:(jobject)mediaplayer moviePlayerController:(MPMoviePlayerController *)player;
+@property (nonatomic, weak) MPMoviePlayerController *player;
 @end

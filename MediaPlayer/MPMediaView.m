@@ -12,6 +12,8 @@
 #import <TNJavaHelper/TNJavaHelper.h>
 
 #import <GLES2/gl2.h>
+#import "MPMoviePlayerController.h"
+#import "MPMovieControlView.h"
 
 typedef BOOL(^EAGLTextureUpdateCallback)(CATransform3D *t);
 
@@ -23,9 +25,12 @@ typedef BOOL(^EAGLTextureUpdateCallback)(CATransform3D *t);
 
 @end
 
+
 @implementation MPMediaView {
     jobject _movieRender;
     jclass _movieRenderClass;
+    
+    MPMovieControlView *_cv;
 }
 
 + (Class)layerClass
@@ -41,7 +46,7 @@ typedef BOOL(^EAGLTextureUpdateCallback)(CATransform3D *t);
 
 }
 
-- (id)initWithFrame:(CGRect)frame aMediaPlayer:(jobject)mediaplayer
+- (id)initWithFrame:(CGRect)frame aMediaPlayer:(jobject)mediaplayer moviePlayerController:(MPMoviePlayerController *)player;
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -56,8 +61,19 @@ typedef BOOL(^EAGLTextureUpdateCallback)(CATransform3D *t);
         GLuint tex = [layer textureID];
         
         [self createJavaMovieRenderWithPlayer:mediaplayer textureID:tex];
+        
+        MPMovieControlView *cv = [[MPMovieControlView alloc] initWithFrame:CGRectMake(0, 400, 500, 80)];
+        cv.player = player;
+        _cv = cv;
+        [self addSubview:cv];
     }
     return self;
+}
+
+- (void)layoutSubviews
+{
+    CGFloat cvheight = 80;
+    _cv.frame = CGRectMake(0,self.bounds.size.height - cvheight,self.bounds.size.width,cvheight);
 }
 
 // Assume call from rendering thread

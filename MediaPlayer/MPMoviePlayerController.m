@@ -17,6 +17,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+#import "MPMovieControlView.h"
 
 @interface MPMoviePlayerController ()
 @property(nonatomic, readwrite) MPMoviePlaybackState playbackState;
@@ -67,10 +68,11 @@
             
             [self createJavaMediaPlayer];
             
-            MPMediaView *v = [[MPMediaView alloc] initWithFrame:CGRectMake(0, 0, 500, 500) aMediaPlayer:_mediaPlayer];
+            MPMediaView *v = [[MPMediaView alloc] initWithFrame:CGRectMake(0, 0, 500, 500) aMediaPlayer:_mediaPlayer moviePlayerController:self];
             _view = v;
             
             [self setJavaDataSource:url];
+            
         }
     }
     return self;
@@ -95,7 +97,7 @@
         NSLog(@"class not found: %@",@"android/media/MediaPlayer");
         return;
     }
-    _mediaPlayerClass = class;
+    _mediaPlayerClass = (*env)->NewGlobalRef(env,class);
     
     jmethodID mid = (*env)->GetMethodID(env,class,"<init>","()V");
     if (mid == NULL) {
@@ -110,7 +112,7 @@
         return;
     }
     
-    _mediaPlayer = object;
+    _mediaPlayer = (*env)->NewGlobalRef(env,object);
 }
 
 - (void)setJavaDataSource:(NSURL *)url
