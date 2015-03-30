@@ -154,6 +154,8 @@
 		4301393A1921EA8E00EC5B20 /* MPVolumeSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVolumeSettings.m; sourceTree = "<group>"; };
 		4301393F1921EA9D00EC5B20 /* MPVolumeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPVolumeView.h; sourceTree = "<group>"; };
 		430139401921EA9D00EC5B20 /* MPVolumeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPVolumeView.m; sourceTree = "<group>"; };
+		436060DC1AC92EBA00303792 /* Android-arm.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Android-arm.xcconfig"; sourceTree = "<group>"; };
+		436060DD1AC92EBA00303792 /* Android-x86.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Android-x86.xcconfig"; sourceTree = "<group>"; };
 		4395FBE61A36BE5F00C4C9C4 /* MPMovieControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMovieControlView.h; sourceTree = "<group>"; };
 		4395FBE71A36BE5F00C4C9C4 /* MPMovieControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMovieControlView.m; sourceTree = "<group>"; };
 		4395FBEC1A36BEED00C4C9C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -284,6 +286,8 @@
 		430138CB1921E70B00EC5B20 /* xcconfig */ = {
 			isa = PBXGroup;
 			children = (
+				436060DC1AC92EBA00303792 /* Android-arm.xcconfig */,
+				436060DD1AC92EBA00303792 /* Android-x86.xcconfig */,
 				430138CC1921E70B00EC5B20 /* Android.xcconfig */,
 			);
 			path = xcconfig;
