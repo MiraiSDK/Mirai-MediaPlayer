@@ -103,6 +103,8 @@
 		43F962681982484500530F4F /* MPMediaView.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F962651982484500530F4F /* MPMediaView.h */; };
 		43F962691982484500530F4F /* MPMediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F962661982484500530F4F /* MPMediaView.m */; };
 		43F9626A1982484500530F4F /* MPMediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F962661982484500530F4F /* MPMediaView.m */; };
+		D2E071711AECC8B9000C8728 /* MPMoviePlayerController+MPPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = D2E071701AECC8B9000C8728 /* MPMoviePlayerController+MPPrivate.h */; };
+		D2E071721AECC8B9000C8728 /* MPMoviePlayerController+MPPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = D2E071701AECC8B9000C8728 /* MPMoviePlayerController+MPPrivate.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +167,7 @@
 		43972E1A1997BF7800EDD603 /* MediaPlayerDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaPlayerDefines.h; sourceTree = "<group>"; };
 		43F962651982484500530F4F /* MPMediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaView.h; sourceTree = "<group>"; };
 		43F962661982484500530F4F /* MPMediaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMediaView.m; sourceTree = "<group>"; };
+		D2E071701AECC8B9000C8728 /* MPMoviePlayerController+MPPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPMoviePlayerController+MPPrivate.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +246,7 @@
 				430138FC1921E9C300EC5B20 /* MPMediaQuery.m */,
 				430139011921E9D400EC5B20 /* MPMediaQuerySection.h */,
 				430139021921E9D400EC5B20 /* MPMediaQuerySection.m */,
+				D2E071701AECC8B9000C8728 /* MPMoviePlayerController+MPPrivate.h */,
 				430139071921E9E500EC5B20 /* MPMoviePlayerController.h */,
 				430139081921E9E500EC5B20 /* MPMoviePlayerController.m */,
 				4301390D1921E9F500EC5B20 /* MPMoviePlayerViewController.h */,
@@ -319,6 +323,7 @@
 				43F962671982484500530F4F /* MPMediaView.h in Headers */,
 				4301390F1921E9F500EC5B20 /* MPMoviePlayerViewController.h in Headers */,
 				430138D21921E8C700EC5B20 /* MPContentItem.h in Headers */,
+				D2E071711AECC8B9000C8728 /* MPMoviePlayerController+MPPrivate.h in Headers */,
 				4301392F1921EA5E00EC5B20 /* MPRemoteCommandCenter.h in Headers */,
 				430139351921EA6800EC5B20 /* MPRemoteCommandEvent.h in Headers */,
 				430138E41921E90B00EC5B20 /* MPMediaItemCollection.h in Headers */,
@@ -347,6 +352,7 @@
 				43972E1B1997BF7C00EDD603 /* MediaPlayerDefines.h in Headers */,
 				430139451921F77900EC5B20 /* MPMediaPlayback.h in Headers */,
 				430138DF1921E8F800EC5B20 /* MPMediaItem.h in Headers */,
+				D2E071721AECC8B9000C8728 /* MPMoviePlayerController+MPPrivate.h in Headers */,
 				430139301921EA5E00EC5B20 /* MPRemoteCommandCenter.h in Headers */,
 				430138F81921E9AF00EC5B20 /* MPMediaPlaylist.h in Headers */,
 				430139041921E9D400EC5B20 /* MPMediaQuerySection.h in Headers */,

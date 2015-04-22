@@ -12,6 +12,8 @@
 #import <TNJavaHelper/TNJavaHelper.h>
 
 #import <GLES2/gl2.h>
+#import <UIKit/UIKit.h>
+
 #import "MPMoviePlayerController.h"
 #import "MPMovieControlView.h"
 
@@ -66,14 +68,17 @@ typedef BOOL(^EAGLTextureUpdateCallback)(CATransform3D *t);
         cv.player = player;
         _cv = cv;
         [self addSubview:cv];
+        
+        UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_expandActivity:)];
+        gestureRecognizer.numberOfTapsRequired = 1;
+        [self addGestureRecognizer:gestureRecognizer];
     }
     return self;
 }
 
 - (void)layoutSubviews
 {
-    CGFloat cvheight = 80;
-    _cv.frame = CGRectMake(0,self.bounds.size.height - cvheight,self.bounds.size.width,cvheight);
+    _cv.frame = CGRectMake(0, 0,self.bounds.size.width, self.bounds.size.height);
 }
 
 // Assume call from rendering thread
@@ -112,6 +117,20 @@ typedef BOOL(^EAGLTextureUpdateCallback)(CATransform3D *t);
     return result;
 }
 
+- (void)refreshPlaybackState
+{
+    [_cv refreshPlaybackState];
+}
+
+- (void)updateProgress
+{
+    [_cv updateProgress];
+}
+
+- (void)setControlStyle:(MPMovieControlStyle)controlStyle
+{
+    [_cv setControlStyle:controlStyle];
+}
 
 - (void)createJavaMovieRenderWithPlayer:(jobject)player textureID:(int)texID;
 {
@@ -154,6 +173,14 @@ typedef BOOL(^EAGLTextureUpdateCallback)(CATransform3D *t);
 - (jobject)movieRender
 {
     return _movieRender;
+}
+
+-(void)_expandActivity:(UITapGestureRecognizer *)recognizer
+{
+    CGPoint location = [recognizer locationInView:self];
+    if (![_cv panelAreaInclude:location]) {
+        [_cv onTouchScreen];
+    }
 }
 
 @end
