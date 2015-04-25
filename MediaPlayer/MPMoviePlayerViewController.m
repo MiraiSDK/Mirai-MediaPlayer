@@ -40,6 +40,11 @@
     return [super supportedInterfaceOrientations];
 }
 
+- (void)viewDidLayoutSubviews
+{
+    _moviePlayer.view.frame = self.view.bounds;
+}
+
 @end
 
 @implementation UIViewController (MPMoviePlayerViewController)
