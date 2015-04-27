@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Shanghai TinyNetwork Inc. All rights reserved.
 //
 
-#import "MPMoviePlayerController.h"
+#import "MPMoviePlayerController+MPPrivate.h"
 #import "MPMediaView.h"
 #import <TNJavaHelper/TNJavaHelper.h>
 
@@ -18,6 +18,9 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "MPMovieControlView.h"
+
+#define MillisecondEachSecond 1000.0
+#define TickIntervalSeconds 0.25
 
 @interface MPMoviePlayerController ()
 @property(nonatomic, readwrite) MPMoviePlaybackState playbackState;
@@ -36,6 +39,7 @@
 @property (nonatomic, readonly) MPMovieErrorLog *errorLog;
 
 @property(nonatomic) BOOL useApplicationAudioSession;// NS_DEPRECATED_IOS(3_2, 6_0);
+@property (nonatomic, strong) NSTimer *tickTimer;
 
 @end
 
@@ -74,6 +78,7 @@
             [self setJavaDataSource:url];
             
         }
+        self.controlStyle = MPMovieControlStyleDefault;
     }
     return self;
 }
@@ -84,8 +89,32 @@
     
     (*env)->DeleteLocalRef(env, _mediaPlayer);
     (*env)->DeleteLocalRef(env, _mediaPlayerClass);
+    
+    [self stopTickTimer];
 }
 
+- (void)startTickTimer
+{
+    [self stopTickTimer];
+    __weak typeof(self) weakSelf = self;
+    self.tickTimer = [NSTimer scheduledTimerWithTimeInterval:TickIntervalSeconds
+                                                      target:weakSelf selector:@selector(onTick:)
+                                                    userInfo:nil repeats:YES];
+}
+
+- (void)stopTickTimer
+{
+    if (self.tickTimer) {
+        [self.tickTimer invalidate];
+        self.tickTimer = nil;
+    }
+}
+
+- (void)onTick:(NSTimer *)timer
+{
+    [[self mediaView] updateProgress];
+}
+                      
 - (void)createJavaMediaPlayer
 {
     JNIEnv *env = [[TNJavaHelper sharedHelper] env];
@@ -134,6 +163,37 @@
 - (void)setFullscreen:(BOOL)fullscreen animated:(BOOL)animated
 {
     
+}
+
+- (MPMediaView *)mediaView
+{
+    return (MPMediaView *)_view;
+}
+
+- (void)setControlStyle:(MPMovieControlStyle)controlStyle
+{
+    _controlStyle = controlStyle;
+    [self.mediaView setControlStyle:controlStyle];
+}
+
+- (void)setPlaybackState:(MPMoviePlaybackState)playbackState
+{
+    MPMoviePlaybackState oldPlaybackState = _playbackState;
+    if (oldPlaybackState != playbackState) {
+        _playbackState = playbackState;
+        [[self mediaView] refreshPlaybackState];
+        [self updateTickTimerStateIfNecessarilyWithCurrentState:playbackState withOldState:oldPlaybackState];
+    }
+}
+
+- (void)updateTickTimerStateIfNecessarilyWithCurrentState:(MPMovieControlStyle)currentPlaybackState withOldState:(MPMovieControlStyle)oldPlaybackState
+{
+    if (oldPlaybackState != MPMoviePlaybackStatePlaying && currentPlaybackState == MPMoviePlaybackStatePlaying) {
+        [self startTickTimer];
+    }
+    if (oldPlaybackState == MPMoviePlaybackStatePlaying && currentPlaybackState != MPMoviePlaybackStatePlaying) {
+        [self stopTickTimer];
+    }
 }
 
 #pragma mark - MPMediaPlayback
@@ -206,17 +266,57 @@
 // The current playback time of the now playing item in seconds.
 - (NSTimeInterval)currentPlaybackTime
 {
-    return 0.0;
+    JNIEnv *env = [[TNJavaHelper sharedHelper] env];
+    
+    jmethodID mid = (*env)->GetMethodID(env,_mediaPlayerClass,"getCurrentPosition","()I");
+    if (mid == NULL) {
+        NSLog(@"method id not found:%@",@"getCurrentPosition ()I");
+        return NAN;
+    }
+    jint currentPlaybackTime = (*env)->CallIntMethod(env, _mediaPlayer, mid);
+    return ((NSTimeInterval) currentPlaybackTime)/MillisecondEachSecond;
 }
 
 - (void)setCurrentPlaybackTime:(NSTimeInterval)currentPlaybackTime
 {
+    JNIEnv *env = [[TNJavaHelper sharedHelper] env];
     
+    jmethodID mid = (*env)->GetMethodID(env,_mediaPlayerClass,"seekTo","(I)V");
+    if (mid == NULL) {
+        NSLog(@"method id not found:%@",@"getCurrentPosition ()I");
+        return;
+    }
+    jint msec = (jint)(currentPlaybackTime*MillisecondEachSecond);
+    (*env)->CallVoidMethod(env, _mediaPlayer, mid, msec);
 }
 
--(float)currentPlaybackRate
+- (float)currentPlaybackRate
 {
-    return 0.0f;
+    return self.currentPlaybackTime/self.duration;
+}
+
+- (void)setCurrentPlaybackRate:(float)currentPlaybackRate
+{
+    NSLog(@"-> rate = %f", currentPlaybackRate);
+    self.currentPlaybackTime = currentPlaybackRate*self.duration;
+}
+
+- (NSTimeInterval)duration
+{
+    JNIEnv *env = [[TNJavaHelper sharedHelper] env];
+    
+    jmethodID mid = (*env)->GetMethodID(env,_mediaPlayerClass,"getDuration","()I");
+    if (mid == NULL) {
+        NSLog(@"method id not found:%@",@"getDuration ()I");
+        return NAN;
+    }
+    jint duration = (*env)->CallIntMethod(env, _mediaPlayer, mid);
+    return ((NSTimeInterval) duration)/MillisecondEachSecond;
+}
+
+- (NSTimeInterval)playableDuration
+{
+    return self.duration;
 }
 
 - (void)beginSeekingForward

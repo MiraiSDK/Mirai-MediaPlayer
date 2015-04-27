@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MPMoviePlayerController.h"
+
 @class MPMoviePlayerController;
 
 @interface MPMovieControlView : UIView
+
+- (void)setControlStyle:(MPMovieControlStyle)controlStyle;
+- (void)onTouchScreen;
+- (void)refreshPlaybackState;
+- (void)updateProgress;
+- (BOOL)panelAreaInclude:(CGPoint)location;
+
 @property (nonatomic, weak) MPMoviePlayerController *player;
 
 @end
