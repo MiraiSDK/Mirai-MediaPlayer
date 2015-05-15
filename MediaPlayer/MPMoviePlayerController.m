@@ -210,6 +210,10 @@
     (*env)->CallVoidMethod(env, _mediaPlayer, mid);
     
     _isPreparedToPlay = YES;
+    
+    if (self.shouldAutoplay) {
+        [self play];
+    }
 }
 
 - (BOOL)isPreparedToPlay
