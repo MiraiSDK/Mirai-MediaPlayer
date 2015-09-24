@@ -8,7 +8,8 @@ checkError()
     fi
 }
 
-if [ ! -f $MIRAI_SDK_PREFIX/lib/libMediaPlayer.so ]; then
+if [ ! -f $MIRAI_SDK_PREFIX/lib/libMediaPlayer.so ] || 
+	[ "$OPTION_REBUILD_COCOA" == "yes" ]; then
 	pushd $MIRAI_PROJECT_ROOT_PATH/Mirai-MediaPlayer
 	xcodebuild -target MediaPlayer-Android -xcconfig xcconfig/Android-$ABI.xcconfig clean
 	
