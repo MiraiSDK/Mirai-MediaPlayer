@@ -19,4 +19,7 @@
 - (void)setControlStyle:(MPMovieControlStyle)controlStyle;
 
 @property (nonatomic, weak) MPMoviePlayerController *player;
+
+- (void)startUpdate;
+- (void)stopUpdate;
 @end

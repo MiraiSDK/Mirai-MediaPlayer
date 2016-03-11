@@ -183,4 +183,21 @@ typedef BOOL(^EAGLTextureUpdateCallback)(CATransform3D *t);
     }
 }
 
+// TODO: fps should read from movie metadata
+#define kMOVIE_FPS 30.0
+- (void)startUpdate
+{
+    // add a dummy animation, to keep layer updated in fps
+    CAAnimation *dummy = [CAAnimation animation];
+    dummy.duration = 1.0/kMOVIE_FPS;
+    dummy.repeatCount = HUGE_VALF;
+    
+    [self.layer addAnimation:dummy forKey:@"FrameUpdate"];
+}
+
+- (void)stopUpdate
+{
+    [self.layer removeAnimationForKey:@"FrameUpdate"];
+}
+
 @end

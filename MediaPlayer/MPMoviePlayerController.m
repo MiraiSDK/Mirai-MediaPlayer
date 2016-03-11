@@ -237,6 +237,7 @@
     (*env)->CallVoidMethod(env, _mediaPlayer, mid);
     
     self.playbackState = MPMoviePlaybackStatePlaying;
+    [(MPMediaView *)self.view startUpdate];
 }
 
 - (void)pause
@@ -251,6 +252,7 @@
     (*env)->CallVoidMethod(env, _mediaPlayer, mid);
     
     self.playbackState = MPMoviePlaybackStatePaused;
+    [(MPMediaView *)self.view stopUpdate];
 }
 
 - (void)stop
@@ -265,6 +267,7 @@
     (*env)->CallVoidMethod(env, _mediaPlayer, mid);
 
     self.playbackState = MPMoviePlaybackStateStopped;
+    [(MPMediaView *)self.view stopUpdate];
 }
 
 // The current playback time of the now playing item in seconds.
