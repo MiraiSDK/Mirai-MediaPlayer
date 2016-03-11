@@ -405,7 +405,7 @@
 - (void)_onTapFullscreenButton:(id)sender
 {
     [self _restartHideCountDownTimer];
-    [self.player setFullscreen:YES];
+    [self.player setFullscreen:!self.player.isFullscreen];
 }
 
 - (void)_onTapPreviousButton:(id)sender
