@@ -18,6 +18,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "MPMovieControlView.h"
+#import "MPUtility.h"
 
 #define MillisecondEachSecond 1000.0
 #define TickIntervalSeconds 0.25
@@ -39,9 +40,10 @@
 @property (nonatomic, readonly) MPMovieErrorLog *errorLog;
 
 @property(nonatomic) BOOL useApplicationAudioSession;// NS_DEPRECATED_IOS(3_2, 6_0);
-@property (nonatomic, strong) NSTimer *tickTimer;
+@property (nonatomic, strong) __MPWeakTimer *tickTimer;
 
 @end
+
 
 @implementation MPMoviePlayerController {
     jobject _mediaPlayer;
@@ -87,8 +89,8 @@
 {
     JNIEnv *env = [[TNJavaHelper sharedHelper] env];
     
-    (*env)->DeleteLocalRef(env, _mediaPlayer);
-    (*env)->DeleteLocalRef(env, _mediaPlayerClass);
+    (*env)->DeleteGlobalRef(env, _mediaPlayer);
+    (*env)->DeleteGlobalRef(env, _mediaPlayerClass);
     
     [self stopTickTimer];
 }
@@ -96,9 +98,8 @@
 - (void)startTickTimer
 {
     [self stopTickTimer];
-    __weak typeof(self) weakSelf = self;
-    self.tickTimer = [NSTimer scheduledTimerWithTimeInterval:TickIntervalSeconds
-                                                      target:weakSelf selector:@selector(onTick:)
+    self.tickTimer = [__MPWeakTimer scheduledTimerWithTimeInterval:TickIntervalSeconds
+                                                      target:self selector:@selector(onTick:)
                                                     userInfo:nil repeats:YES];
 }
 

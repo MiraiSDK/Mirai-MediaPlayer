@@ -9,6 +9,7 @@
 #import "MPMovieControlView.h"
 #import "MPMoviePlayerController+MPPrivate.h"
 #import <UIKit/UIKit.h>
+#import "MPUtility.h"
 
 #define DefaultPanelBackgroundColor [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5]
 #define DefaultPanelHideAutomaticallyTime 5
@@ -36,7 +37,7 @@
 @property (nonatomic, strong) UIView *topPanel;
 @property (nonatomic, strong) UIView *bottomPanel;
 @property (nonatomic) BOOL panelVisible;
-@property (nonatomic, strong) NSTimer *hidePanelTimer;
+@property (nonatomic, strong) __MPWeakTimer *hidePanelTimer;
 @end
 
 @implementation MPMovieControlView
@@ -490,7 +491,7 @@
 - (void)_restartHideCountDownTimer
 {
     [self _stopHideCountDownTimer];
-    self.hidePanelTimer = [NSTimer scheduledTimerWithTimeInterval:DefaultPanelHideAutomaticallyTime
+    self.hidePanelTimer = [__MPWeakTimer scheduledTimerWithTimeInterval:DefaultPanelHideAutomaticallyTime
                                                            target:self selector:@selector(_onTimeOut:)
                                                          userInfo:nil repeats:NO];
 }
