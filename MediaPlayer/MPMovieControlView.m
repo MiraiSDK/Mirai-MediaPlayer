@@ -49,6 +49,7 @@
         [self _settingDefaultValues];
         [self _makeAllPanels];
         [self _hidePanel];
+        [self _resetPanelToMatchControlStyle:MPMovieControlModeDefault];
     }
     return self;
 }
@@ -85,13 +86,18 @@
 - (void)setControlStyle:(MPMovieControlStyle)controlStyle
 {
     if (_controlStyle != controlStyle) {
-        _controlStyle = controlStyle;
-        [self _clearPanel];
-        [self _initPanelForStyle:controlStyle];
-        [self _resizeForStyle:controlStyle];
-        [self _refreshButtonStateForStyle:controlStyle];
-        [self _refreshPanelVisibleState];
+        [self _resetPanelToMatchControlStyle:controlStyle];
     }
+}
+
+- (void)_resetPanelToMatchControlStyle:(MPMovieControlStyle)controlStyle
+{
+    _controlStyle = controlStyle;
+    [self _clearPanel];
+    [self _initPanelForStyle:controlStyle];
+    [self _resizeForStyle:controlStyle];
+    [self _refreshButtonStateForStyle:controlStyle];
+    [self _refreshPanelVisibleState];
 }
 
 - (void)layoutSubviews
