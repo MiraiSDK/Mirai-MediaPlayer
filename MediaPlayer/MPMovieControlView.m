@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 #import "MPUtility.h"
 
-#define DefaultPanelBackgroundColor [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5]
+#define DefaultPanelBackgroundColor [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.5]
 #define DefaultPanelHideAutomaticallyTime 5
 
 #define DefaultBottomPanelHeight 80
@@ -22,6 +22,13 @@
 #define DefaultProgressBarHeight 55
 #define DefaultTimeLabelWidth 130
 #define DefaultTimeLabelInverval 30
+
+@interface UISlider (MPMovieControlViewPrivateMethod)
+
+@property (nonatomic, readonly) BOOL hasDragThumbLastTouch;
+@property (nonatomic, assign) id privateDelegate;
+
+@end
 
 @interface MPMovieControlView ()
 @property (nonatomic) MPMovieControlStyle controlStyle;
@@ -364,7 +371,7 @@
 
 - (void)updateProgress
 {
-    if (!self.progressSliderBar.hidden) {
+    if (!self.progressSliderBar.hidden && !self.progressSliderBar.hasDragThumbLastTouch) {
         _maskProgressValueChangedCallback = YES;
         [self.progressSliderBar setValue:self.player.currentPlaybackRate];
         _maskProgressValueChangedCallback = NO;
@@ -375,6 +382,7 @@
 {
     [progressBar addTarget:self action:@selector(_onProgressValueChanged:)
           forControlEvents:UIControlEventValueChanged];
+    [progressBar setPrivateDelegate:self];
 }
 
 - (void)_onProgressValueChanged:(id)sender
@@ -382,6 +390,17 @@
     if (!_maskProgressValueChangedCallback) {
         [self.player setCurrentPlaybackRate:self.progressSliderBar.value];
     }
+}
+
+- (void)onStartDragging
+{
+}
+
+- (void)onEndDragging
+{
+    _maskProgressValueChangedCallback = YES;
+    [self.progressSliderBar setValue:self.player.currentPlaybackRate];
+    _maskProgressValueChangedCallback = NO;
 }
 
 #pragma mark - events callback.
