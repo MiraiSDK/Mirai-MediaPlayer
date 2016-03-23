@@ -233,11 +233,18 @@
                                               intoContainer:self.bottomPanel];
     self.fullscreenButton = [self _createButtonWithAnction:@selector(_onTapFullscreenButton:)
                                              intoContainer:self.bottomPanel];
+    self.progressSliderBar = [self _createSliderIntoContainer:self.bottomPanel];
     
     [self.fullscreenButton setTitle:@"口" forState:UIControlStateNormal];
 }
 
 - (void)_resizeForEmbedded
+{
+    [self _resizeButtonsForEmbedded];
+    [self _refreshProgressSliderForEmbedded];
+}
+
+- (void)_resizeButtonsForEmbedded
 {
     CGPoint playerOrPauseButtonLocation = CGPointZero;
     playerOrPauseButtonLocation.x = DefaultEmbeddedButtonToBorderDistance;
@@ -253,6 +260,19 @@
     
     [self _setStandardSizeForComponent:self.playOrPauseButton andMoveTo:playerOrPauseButtonLocation];
     [self _setStandardSizeForComponent:self.fullscreenButton andMoveTo:fullscreenButtonLocation];
+}
+
+- (void)_refreshProgressSliderForEmbedded
+{
+    CGFloat progressWidth = DefaultProgressBarWidthProportion*self.topPanel.bounds.size.width;
+    CGPoint progressLocation = CGPointZero;
+    progressLocation.x = [self _getCenterLocationWithComponentSize:progressWidth
+                                                 withContainerSize:self.bottomPanel.bounds.size.width];
+    progressLocation.y = [self _getCenterLocationWithComponentSize:DefaultProgressBarHeight
+                                                 withContainerSize:self.bottomPanel.bounds.size.height];
+    
+    [self _setSpecialSize:CGSizeMake(progressWidth, DefaultProgressBarHeight)
+             forComponent:self.progressSliderBar andMovieTo:progressLocation];
 }
 
 - (void)_refreshButtonStateForEmbedded
@@ -272,8 +292,6 @@
 {
     self.doneButton = [self _createButtonWithAnction:@selector(_onTapDoneButton:)
                                        intoContainer:self.topPanel];
-//    self.playedTimeText = [self _createLabelIntoContainer:self.topPanel];
-//    self.remainTimeText = [self _createLabelIntoContainer:self.topPanel];
     self.progressSliderBar = [self _createSliderIntoContainer:self.topPanel];
     
     self.playOrPauseButton = [self _createButtonWithAnction:@selector(_onTapPlayOrPauseButton:)
@@ -323,8 +341,6 @@
     [self _setStandardSizeForComponent:self.doneButton andMoveTo:doneButtonLocation];
     [self _setSpecialSize:CGSizeMake(progressWidth, DefaultProgressBarHeight)
              forComponent:self.progressSliderBar andMovieTo:progressLocation];
-//    [self _setSpecialSize:timeLabelSize forComponent:self.playedTimeText andMovieTo:leftTimeLabelLocation];
-//    [self _setSpecialSize:timeLabelSize forComponent:self.remainTimeText andMovieTo:rightTimeLabelLocation];
 }
 
 - (void)_resizeBottomPanelForFullscreen
