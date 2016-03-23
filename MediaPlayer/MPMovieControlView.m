@@ -581,6 +581,10 @@
 {
     UISlider *slider = [[UISlider alloc] initWithFrame:CGRectZero];
     slider.continuous = NO;
+    slider.maximumTrackTintColor = [UIColor blackColor];
+    slider.minimumTrackTintColor = [UIColor whiteColor];
+    slider.thumbTintColor = [UIColor whiteColor];
+    [slider setThumbImage:[MPMovieControlView _progressSliderThumb] forState:UIControlStateNormal];
     [container addSubview: slider];
     [self _makeTouchNotifierForProgressBar:slider];
     return slider;
@@ -604,6 +608,28 @@
 - (CGFloat)_getRightLocationWithComppoentSize:(CGFloat)componentSize withContainerSize:(CGFloat)containerSize toBorderDistance:(CGFloat)toBorderDistance
 {
     return containerSize - componentSize - toBorderDistance;
+}
+
++ (UIImage *)_progressSliderThumb
+{
+    static UIImage *_defaultThumbImage;
+    
+    if (!_defaultThumbImage) {
+        UIColor *color = [UIColor whiteColor];
+        CGSize thumbSize = CGSizeMake(15, 15);
+        UIGraphicsBeginImageContextWithOptions(thumbSize, NO, 0.0);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextSaveGState(context);
+        CGContextSetFillColorWithColor(context, [color CGColor]);
+        CGContextSetLineWidth(context, 0);
+        CGRect rect = CGRectMake(0, 0, thumbSize.width, thumbSize.height);
+        CGContextAddEllipseInRect(context, rect);
+        CGContextDrawPath(context, kCGPathFillStroke);
+        CGContextRestoreGState(context);
+        _defaultThumbImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+    return _defaultThumbImage;
 }
 
 @end
