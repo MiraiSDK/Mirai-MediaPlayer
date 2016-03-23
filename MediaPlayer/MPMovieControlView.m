@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 #import "MPUtility.h"
 
-#define DefaultPanelBackgroundColor [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.5]
+#define DefaultPanelBackgroundColor [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.5]
 #define DefaultPanelHideAutomaticallyTime 5
 
 #define DefaultBottomPanelHeight 80
@@ -560,6 +560,10 @@
 - (UIButton *)_createButtonWithAnction:(SEL)tapedAction intoContainer:(UIView *)container
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    
     [button addTarget:self action:tapedAction forControlEvents:UIControlEventTouchUpInside];
     [container addSubview:button];
     return button;
