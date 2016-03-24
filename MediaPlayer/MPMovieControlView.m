@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 #import "MPUtility.h"
 
-#define DefaultPanelBackgroundColor [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5]
+#define DefaultPanelBackgroundColor [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.5]
 #define DefaultPanelHideAutomaticallyTime 5
 
 #define DefaultBottomPanelHeight 80
@@ -22,6 +22,13 @@
 #define DefaultProgressBarHeight 55
 #define DefaultTimeLabelWidth 130
 #define DefaultTimeLabelInverval 30
+
+@interface UISlider (MPMovieControlViewPrivateMethod)
+
+@property (nonatomic, readonly) BOOL hasDragThumbLastTouch;
+@property (nonatomic, assign) id privateDelegate;
+
+@end
 
 @interface MPMovieControlView ()
 @property (nonatomic) MPMovieControlStyle controlStyle;
@@ -49,6 +56,7 @@
         [self _settingDefaultValues];
         [self _makeAllPanels];
         [self _hidePanel];
+        [self _resetPanelToMatchControlStyle:MPMovieControlModeDefault];
     }
     return self;
 }
@@ -85,13 +93,18 @@
 - (void)setControlStyle:(MPMovieControlStyle)controlStyle
 {
     if (_controlStyle != controlStyle) {
-        _controlStyle = controlStyle;
-        [self _clearPanel];
-        [self _initPanelForStyle:controlStyle];
-        [self _resizeForStyle:controlStyle];
-        [self _refreshButtonStateForStyle:controlStyle];
-        [self _refreshPanelVisibleState];
+        [self _resetPanelToMatchControlStyle:controlStyle];
     }
+}
+
+- (void)_resetPanelToMatchControlStyle:(MPMovieControlStyle)controlStyle
+{
+    _controlStyle = controlStyle;
+    [self _clearPanel];
+    [self _initPanelForStyle:controlStyle];
+    [self _resizeForStyle:controlStyle];
+    [self _refreshButtonStateForStyle:controlStyle];
+    [self _refreshPanelVisibleState];
 }
 
 - (void)layoutSubviews
@@ -220,11 +233,18 @@
                                               intoContainer:self.bottomPanel];
     self.fullscreenButton = [self _createButtonWithAnction:@selector(_onTapFullscreenButton:)
                                              intoContainer:self.bottomPanel];
+    self.progressSliderBar = [self _createSliderIntoContainer:self.bottomPanel];
     
     [self.fullscreenButton setTitle:@"口" forState:UIControlStateNormal];
 }
 
 - (void)_resizeForEmbedded
+{
+    [self _resizeButtonsForEmbedded];
+    [self _refreshProgressSliderForEmbedded];
+}
+
+- (void)_resizeButtonsForEmbedded
 {
     CGPoint playerOrPauseButtonLocation = CGPointZero;
     playerOrPauseButtonLocation.x = DefaultEmbeddedButtonToBorderDistance;
@@ -240,6 +260,19 @@
     
     [self _setStandardSizeForComponent:self.playOrPauseButton andMoveTo:playerOrPauseButtonLocation];
     [self _setStandardSizeForComponent:self.fullscreenButton andMoveTo:fullscreenButtonLocation];
+}
+
+- (void)_refreshProgressSliderForEmbedded
+{
+    CGFloat progressWidth = DefaultProgressBarWidthProportion*self.topPanel.bounds.size.width;
+    CGPoint progressLocation = CGPointZero;
+    progressLocation.x = [self _getCenterLocationWithComponentSize:progressWidth
+                                                 withContainerSize:self.bottomPanel.bounds.size.width];
+    progressLocation.y = [self _getCenterLocationWithComponentSize:DefaultProgressBarHeight
+                                                 withContainerSize:self.bottomPanel.bounds.size.height];
+    
+    [self _setSpecialSize:CGSizeMake(progressWidth, DefaultProgressBarHeight)
+             forComponent:self.progressSliderBar andMovieTo:progressLocation];
 }
 
 - (void)_refreshButtonStateForEmbedded
@@ -259,8 +292,6 @@
 {
     self.doneButton = [self _createButtonWithAnction:@selector(_onTapDoneButton:)
                                        intoContainer:self.topPanel];
-//    self.playedTimeText = [self _createLabelIntoContainer:self.topPanel];
-//    self.remainTimeText = [self _createLabelIntoContainer:self.topPanel];
     self.progressSliderBar = [self _createSliderIntoContainer:self.topPanel];
     
     self.playOrPauseButton = [self _createButtonWithAnction:@selector(_onTapPlayOrPauseButton:)
@@ -310,8 +341,6 @@
     [self _setStandardSizeForComponent:self.doneButton andMoveTo:doneButtonLocation];
     [self _setSpecialSize:CGSizeMake(progressWidth, DefaultProgressBarHeight)
              forComponent:self.progressSliderBar andMovieTo:progressLocation];
-//    [self _setSpecialSize:timeLabelSize forComponent:self.playedTimeText andMovieTo:leftTimeLabelLocation];
-//    [self _setSpecialSize:timeLabelSize forComponent:self.remainTimeText andMovieTo:rightTimeLabelLocation];
 }
 
 - (void)_resizeBottomPanelForFullscreen
@@ -358,7 +387,7 @@
 
 - (void)updateProgress
 {
-    if (!self.progressSliderBar.hidden) {
+    if (!self.progressSliderBar.hidden && !self.progressSliderBar.hasDragThumbLastTouch) {
         _maskProgressValueChangedCallback = YES;
         [self.progressSliderBar setValue:self.player.currentPlaybackRate];
         _maskProgressValueChangedCallback = NO;
@@ -369,6 +398,7 @@
 {
     [progressBar addTarget:self action:@selector(_onProgressValueChanged:)
           forControlEvents:UIControlEventValueChanged];
+    [progressBar setPrivateDelegate:self];
 }
 
 - (void)_onProgressValueChanged:(id)sender
@@ -376,6 +406,17 @@
     if (!_maskProgressValueChangedCallback) {
         [self.player setCurrentPlaybackRate:self.progressSliderBar.value];
     }
+}
+
+- (void)onStartDragging
+{
+}
+
+- (void)onEndDragging
+{
+    _maskProgressValueChangedCallback = YES;
+    [self.progressSliderBar setValue:self.player.currentPlaybackRate];
+    _maskProgressValueChangedCallback = NO;
 }
 
 #pragma mark - events callback.
@@ -535,6 +576,10 @@
 - (UIButton *)_createButtonWithAnction:(SEL)tapedAction intoContainer:(UIView *)container
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    
     [button addTarget:self action:tapedAction forControlEvents:UIControlEventTouchUpInside];
     [container addSubview:button];
     return button;
@@ -552,6 +597,10 @@
 {
     UISlider *slider = [[UISlider alloc] initWithFrame:CGRectZero];
     slider.continuous = NO;
+    slider.maximumTrackTintColor = [UIColor blackColor];
+    slider.minimumTrackTintColor = [UIColor whiteColor];
+    slider.thumbTintColor = [UIColor whiteColor];
+    [slider setThumbImage:[MPMovieControlView _progressSliderThumb] forState:UIControlStateNormal];
     [container addSubview: slider];
     [self _makeTouchNotifierForProgressBar:slider];
     return slider;
@@ -575,6 +624,28 @@
 - (CGFloat)_getRightLocationWithComppoentSize:(CGFloat)componentSize withContainerSize:(CGFloat)containerSize toBorderDistance:(CGFloat)toBorderDistance
 {
     return containerSize - componentSize - toBorderDistance;
+}
+
++ (UIImage *)_progressSliderThumb
+{
+    static UIImage *_defaultThumbImage;
+    
+    if (!_defaultThumbImage) {
+        UIColor *color = [UIColor whiteColor];
+        CGSize thumbSize = CGSizeMake(15, 15);
+        UIGraphicsBeginImageContextWithOptions(thumbSize, NO, 0.0);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextSaveGState(context);
+        CGContextSetFillColorWithColor(context, [color CGColor]);
+        CGContextSetLineWidth(context, 0);
+        CGRect rect = CGRectMake(0, 0, thumbSize.width, thumbSize.height);
+        CGContextAddEllipseInRect(context, rect);
+        CGContextDrawPath(context, kCGPathFillStroke);
+        CGContextRestoreGState(context);
+        _defaultThumbImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+    return _defaultThumbImage;
 }
 
 @end
