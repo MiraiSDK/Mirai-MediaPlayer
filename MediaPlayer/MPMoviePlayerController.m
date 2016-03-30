@@ -89,6 +89,20 @@
 {
     JNIEnv *env = [[TNJavaHelper sharedHelper] env];
     
+    jmethodID mid = (*env)->GetMethodID(env,_mediaPlayerClass,"reset","()V");
+    if (mid == NULL) {
+        NSLog(@"method id not found:reset");
+        return;
+    }
+    (*env)->CallVoidMethod(env, _mediaPlayer, mid);
+    
+    mid = (*env)->GetMethodID(env,_mediaPlayerClass,"release","()V");
+    if (mid == NULL) {
+        NSLog(@"method id not found:release");
+        return;
+    }
+    (*env)->CallVoidMethod(env, _mediaPlayer, mid);
+    
     (*env)->DeleteGlobalRef(env, _mediaPlayer);
     (*env)->DeleteGlobalRef(env, _mediaPlayerClass);
     
